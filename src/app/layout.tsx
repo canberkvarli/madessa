@@ -3,6 +3,7 @@ import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
 import Providers from "@/components/cart/Providers";
+import { getCatalog } from "@/lib/shopify";
 
 const fraunces = Fraunces({
   variable: "--font-display",
@@ -31,13 +32,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const { products, categories, deal, live } = await getCatalog();
   return (
     <html lang="en">
       <body className={`${fraunces.variable} ${hanken.variable} antialiased`}>
-        <Providers>{children}</Providers>
+        <Providers
+          products={products}
+          categories={categories}
+          deal={deal}
+          live={live}
+        >
+          {children}
+        </Providers>
       </body>
     </html>
   );

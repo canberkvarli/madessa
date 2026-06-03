@@ -1,12 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Reveal from "./Reveal";
-import { products } from "@/data/products";
 import { site } from "@/data/site";
-
-// Uses stable product imagery as the social grid (IG CDN links expire).
-const grid = products.slice(0, 6);
+import { useCatalog } from "@/components/catalog/CatalogContext";
 
 export default function InstagramStrip() {
+  const { products } = useCatalog();
+  // Uses stable product imagery as the social grid (IG CDN links expire).
+  const grid = products.slice(0, 6);
   return (
     <section className="px-6 py-16 lg:px-10 lg:py-20">
       <div className="mx-auto max-w-7xl">

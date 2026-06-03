@@ -3,10 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
-import { products } from "@/data/products";
 import AddToCartButton from "./cart/AddToCartButton";
-
-const muse = products[0];
+import { useCatalog } from "@/components/catalog/CatalogContext";
 
 // A gentle, ever-present urgency window (resets every 24h), no fake dates baked in.
 function useCountdown() {
@@ -34,6 +32,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 
 export default function OfferStrip() {
   const t = useCountdown();
+  const { deal: muse } = useCatalog();
   const off = muse.compareAt
     ? Math.round((1 - muse.price / muse.compareAt) * 100)
     : 0;
@@ -57,7 +56,7 @@ export default function OfferStrip() {
 
             <div className="p-8 sm:p-12">
               <span className="inline-flex items-center gap-2 rounded-full bg-clay px-4 py-1.5 text-[0.7rem] uppercase tracking-[0.24em]">
-                Deal of the week · −{off}%
+                Deal of the week{off > 0 ? ` · −${off}%` : ""}
               </span>
               <h2 className="mt-5 font-display text-4xl leading-tight sm:text-5xl">
                 The {muse.title}

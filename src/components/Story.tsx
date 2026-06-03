@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Reveal from "./Reveal";
-import { products } from "@/data/products";
+import { useCatalog } from "@/components/catalog/CatalogContext";
 
 export default function Story() {
+  const { products } = useCatalog();
+  const [imgA, imgB] = [products[4]?.image, products[1]?.image];
   return (
     <section id="story" className="px-6 py-20 lg:px-10 lg:py-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -10,7 +14,7 @@ export default function Story() {
         <Reveal className="relative">
           <div className="relative aspect-[4/5] w-[78%] overflow-hidden rounded-[2.5rem] rounded-bl-[6rem] shadow-2xl ring-1 ring-ink/10">
             <Image
-              src={products[4].image}
+              src={imgA}
               alt="Handmade Madessa pieces"
               fill
               sizes="(max-width: 1024px) 70vw, 360px"
@@ -19,7 +23,7 @@ export default function Story() {
           </div>
           <div className="animate-float absolute -bottom-6 right-0 aspect-square w-[46%] overflow-hidden rounded-[2rem] shadow-xl ring-4 ring-paper">
             <Image
-              src={products[1].image}
+              src={imgB}
               alt="A little Madessa set"
               fill
               sizes="200px"

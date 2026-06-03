@@ -4,13 +4,14 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Reveal from "./Reveal";
 import ProductCard from "./ProductCard";
-import { products, categories, type Product } from "@/data/products";
+import { type Product } from "@/data/products";
 import { site } from "@/data/site";
-
-const filters = ["All", ...categories] as const;
+import { useCatalog } from "@/components/catalog/CatalogContext";
 
 export default function Collections() {
-  const [active, setActive] = useState<(typeof filters)[number]>("All");
+  const { products, categories } = useCatalog();
+  const filters = ["All", ...categories];
+  const [active, setActive] = useState<string>("All");
   const shown: Product[] =
     active === "All" ? products : products.filter((p) => p.category === active);
 

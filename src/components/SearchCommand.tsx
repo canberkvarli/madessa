@@ -3,10 +3,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { products, productUrl, categories } from "@/data/products";
+import { productUrl } from "@/data/products";
 import { site } from "@/data/site";
+import { useCatalog } from "@/components/catalog/CatalogContext";
 
 export default function SearchCommand() {
+  const { products, categories } = useCatalog();
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const [active, setActive] = useState(0);
@@ -55,7 +57,7 @@ export default function SearchCommand() {
         p.category.toLowerCase().includes(term) ||
         p.blurb.toLowerCase().includes(term),
     );
-  }, [q]);
+  }, [q, products]);
 
   useEffect(() => setActive(0), [q]);
 

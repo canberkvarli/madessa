@@ -3,13 +3,16 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { site } from "@/data/site";
-import { products } from "@/data/products";
-
-const featured = products[0]; // Little Muse Dress (on sale)
+import { useCatalog } from "@/components/catalog/CatalogContext";
 
 export default function Hero() {
   const reduce = useReducedMotion();
   const ease = [0.16, 1, 0.3, 1] as const;
+  const { deal, products } = useCatalog();
+  const featured = deal; // best current deal
+  const faces = [site.heroImage, featured.image, products[1]?.image].filter(
+    Boolean,
+  ) as string[];
 
   return (
     <section id="top" className="relative overflow-hidden">
@@ -87,7 +90,7 @@ export default function Hero() {
             className="mt-10 flex items-center gap-6 text-sm text-ink-soft"
           >
             <div className="flex -space-x-2">
-              {[site.heroImage, featured.image, products[2].image].map((src, i) => (
+              {faces.map((src, i) => (
                 <span key={i} className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-paper">
                   <Image src={src} alt="" fill sizes="36px" className="object-cover" />
                 </span>

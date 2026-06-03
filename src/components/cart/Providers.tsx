@@ -2,12 +2,33 @@
 
 import { CartProvider } from "./CartContext";
 import CartDrawer from "./CartDrawer";
+import { CatalogProvider } from "@/components/catalog/CatalogContext";
+import type { Product } from "@/data/products";
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default function Providers({
+  products,
+  categories,
+  deal,
+  live,
+  children,
+}: {
+  products: Product[];
+  categories: string[];
+  deal: Product;
+  live: boolean;
+  children: React.ReactNode;
+}) {
   return (
-    <CartProvider>
-      {children}
-      <CartDrawer />
-    </CartProvider>
+    <CatalogProvider
+      products={products}
+      categories={categories}
+      deal={deal}
+      live={live}
+    >
+      <CartProvider>
+        {children}
+        <CartDrawer />
+      </CartProvider>
+    </CatalogProvider>
   );
 }

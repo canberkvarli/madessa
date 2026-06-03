@@ -8,11 +8,11 @@ import {
   useMemo,
   useState,
 } from "react";
-import { products, type Product } from "@/data/products";
+import { type Product } from "@/data/products";
 import { site } from "@/data/site";
+import { useCatalog } from "@/components/catalog/CatalogContext";
 
 const STORAGE_KEY = "madessa-cart-v1";
-const bySlug = new Map(products.map((p) => [p.slug, p]));
 
 export type CartLine = { product: Product; qty: number };
 
@@ -34,6 +34,7 @@ type CartState = {
 const CartContext = createContext<CartState | null>(null);
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
+  const { bySlug } = useCatalog();
   const [items, setItems] = useState<Record<string, number>>({});
   const [isOpen, setIsOpen] = useState(false);
   const [hydrated, setHydrated] = useState(false);
@@ -80,7 +81,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           return product ? { product, qty } : null;
         })
         .filter(Boolean) as CartLine[],
-    [items],
+    [items, bySlug],
   );
 
   const count = useMemo(() => lines.reduce((n, l) => n + l.qty, 0), [lines]);

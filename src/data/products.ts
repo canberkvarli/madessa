@@ -3,6 +3,7 @@
 export type Product = {
   slug: string; title: string; category: string;
   price: number; compareAt: number | null; image: string; blurb: string; variantId: string;
+  available?: boolean;
 };
 
 export const productUrl = (slug: string) => `https://madessa.co/products/${slug}`;

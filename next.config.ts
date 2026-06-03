@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "madessa.co", pathname: "/cdn/shop/**" },
+      { protocol: "https", hostname: "cdn.shopify.com", pathname: "/**" },
     ],
   },
 };

@@ -1,24 +1,36 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { site } from "@/data/site";
 import { useT } from "./i18n/LocaleContext";
 
 export default function LifestyleBreak() {
   const { t } = useT();
   const reduce = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
     <section className="px-4 py-6 lg:px-6">
-      <div className="relative mx-auto aspect-[4/5] w-full max-w-[1500px] overflow-hidden rounded-[2rem] sm:aspect-[16/10] lg:aspect-[21/9]">
-        <Image
-          src={site.lifestyleImage}
-          alt="A little one in a handmade Madessa dress"
-          fill
-          sizes="100vw"
-          className="object-cover object-[50%_30%]"
-        />
+      <div
+        ref={ref}
+        className="relative mx-auto aspect-[4/5] w-full max-w-[1500px] overflow-hidden rounded-[2rem] sm:aspect-[16/10] lg:aspect-[21/9]"
+      >
+        <motion.div className="absolute inset-0" style={reduce ? undefined : { y }}>
+          <Image
+            src={site.lifestyleImage}
+            alt="A little one in a handmade Madessa dress"
+            fill
+            sizes="100vw"
+            className="scale-110 object-cover object-[50%_30%]"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/10 to-transparent" />
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 20 }}

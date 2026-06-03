@@ -88,6 +88,8 @@ export const dict: Record<Locale, Dict> = {
     "reviews.eyebrow": "Real people, real feedback",
     "reviews.heading": "Loved by families everywhere",
 
+    "cats.eyebrow": "Shop by category",
+    "cats.heading": "Find their next favourite",
     "lifestyle.line": "Soft cotton, real bows, made to be lived in.",
     "lifestyle.cta": "Discover the collection",
     "footer.explore": "Explore",
@@ -176,6 +178,8 @@ export const dict: Record<Locale, Dict> = {
     "reviews.eyebrow": "Echte mensen, echte reacties",
     "reviews.heading": "Geliefd bij gezinnen overal",
 
+    "cats.eyebrow": "Shop per categorie",
+    "cats.heading": "Vind hun nieuwe favoriet",
     "lifestyle.line": "Zachte katoen, echte strikken, gemaakt om in te leven.",
     "lifestyle.cta": "Ontdek de collectie",
     "footer.explore": "Ontdek",
@@ -264,6 +268,8 @@ export const dict: Record<Locale, Dict> = {
     "reviews.eyebrow": "Gerçek insanlar, gerçek yorumlar",
     "reviews.heading": "Her yerde aileler tarafından seviliyor",
 
+    "cats.eyebrow": "Kategoriye göre",
+    "cats.heading": "Yeni favorilerini bul",
     "lifestyle.line": "Yumuşak pamuk, gerçek fiyonklar, yaşanmak için yapıldı.",
     "lifestyle.cta": "Koleksiyonu keşfet",
     "footer.explore": "Keşfet",

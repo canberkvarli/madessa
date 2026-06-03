@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="absolute top-1/3 -right-24 h-[26rem] w-[26rem] rounded-full bg-sage/30 blur-3xl" />
       </div>
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-12 pt-10 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-10 lg:pt-16">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-12 pt-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16 lg:px-10 lg:pt-16">
         {/*  Copy  */}
         <div className="relative z-10">
           <motion.span
@@ -109,14 +109,14 @@ export default function Hero() {
           transition={{ duration: 1.1, delay: 0.15, ease }}
           className="relative"
         >
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2.4rem] rounded-tr-[7rem] shadow-[0_40px_80px_-40px_rgba(44,38,34,0.55)] ring-1 ring-ink/10">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-xl overflow-hidden rounded-[2.8rem] rounded-tr-[8rem] shadow-[0_50px_90px_-40px_rgba(44,38,34,0.6)] ring-1 ring-ink/10 lg:aspect-[5/6]">
             <Image
               src={site.heroImage}
               alt="A little one in a handmade Madessa dress"
               fill
               priority
-              sizes="(max-width: 1024px) 90vw, 460px"
-              className="object-cover object-[50%_28%]"
+              sizes="(max-width: 1024px) 92vw, 600px"
+              className="object-cover object-[50%_26%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/15 via-transparent to-transparent" />
           </div>

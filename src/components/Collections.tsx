@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Reveal from "./Reveal";
 import ProductCard from "./ProductCard";
@@ -16,6 +16,18 @@ export default function Collections() {
   const [active, setActive] = useState<string>("All");
   const shown: Product[] =
     active === "All" ? products : products.filter((p) => p.category === active);
+
+  // Category band tiles dispatch this to filter + scroll here.
+  useEffect(() => {
+    const onFilter = (e: Event) => {
+      const cat = (e as CustomEvent<string>).detail;
+      setActive(
+        cat === "All" || products.some((p) => p.category === cat) ? cat : "All",
+      );
+    };
+    window.addEventListener("madessa:filter", onFilter);
+    return () => window.removeEventListener("madessa:filter", onFilter);
+  }, [products]);
 
   return (
     <section id="shop" className="px-6 py-16 lg:px-10 lg:py-24">

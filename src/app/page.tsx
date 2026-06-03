@@ -10,6 +10,7 @@ import InstagramStrip from "@/components/InstagramStrip";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import LifestyleBreak from "@/components/LifestyleBreak";
+import CategoryBand from "@/components/CategoryBand";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <main id="main">
         <Hero />
         <OfferStrip />
+        <CategoryBand />
         <Collections />
         <LifestyleBreak />
         <ValuePillars />

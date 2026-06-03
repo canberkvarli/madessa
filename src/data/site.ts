@@ -37,7 +37,24 @@ export const site = {
   // Hero image: the real 3840px Madessa banner, art-directed so it is never cropped wrong on desktop.
   heroImage:
     "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/9AE826E0-F7F1-4638-9319-5749E2460641.png?v=1778184439&width=3840",
+
+  // Full-bleed lifestyle break image.
+  lifestyleImage:
+    "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/MD_2228.jpg?width=2400",
 };
+
+// Real lifestyle photography for the Instagram / gallery band.
+const G = "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/";
+export const gallery = [
+  `${G}MD_2228.jpg?width=900`,
+  `${G}MD_0303.jpg?width=900`,
+  `${G}MD_2267.jpg?width=900`,
+  `${G}MD_2266.jpg?width=900`,
+  `${G}MD_2122.jpg?width=900`,
+  `${G}MD_2153.jpg?width=900`,
+  `${G}MD_2067.jpg?width=900`,
+  `${G}MD_2084_copy.jpg?width=900`,
+];
 
 // `key` resolves to a translation in i18n.ts; `label` is the English fallback.
 export const nav = [

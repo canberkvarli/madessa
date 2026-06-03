@@ -33,7 +33,7 @@ export const dict: Record<Locale, Dict> = {
     "hero.titleTemplate": "Made by a {0}, for yours.",
     "hero.titleEmph": "family",
     "hero.subtitle":
-      "Handmade details, natural fabrics and real, structured bows, never glued. Soft, sustainable clothing for little ones and the mamas who love them.",
+      "Handmade details, natural fabrics, real bows. Soft, sustainable clothing for little ones and their mamas.",
     "hero.cta1": "Shop the collection",
     "hero.cta2": "Our story",
     "hero.trust": "Loved by 5,000+ families",
@@ -63,13 +63,13 @@ export const dict: Record<Locale, Dict> = {
     "pillars.headingEmph": "why",
     "pillars.1t": "Careful design",
     "pillars.1b":
-      "Everything we do starts with why. Every seam, every bow, every fabric is considered, never rushed.",
+      "Every seam, every bow, every fabric, considered and never rushed.",
     "pillars.2t": "Made with care",
     "pillars.2b":
-      "We believe in building better and sustainable. Natural fabrics, small batches, and pieces made to be passed down, not thrown away.",
+      "Natural fabrics, small batches, made to be passed down, not thrown away.",
     "pillars.3t": "A family with a goal",
     "pillars.3b":
-      "Real people making great products. Madessa is made by a family, for yours, stitched by hand and wrapped with love.",
+      "Made by a family, for yours. Stitched by hand and wrapped with love.",
 
     "newsletter.perk": "10% off your first order",
     "newsletter.heading": "Join the family",
@@ -88,6 +88,8 @@ export const dict: Record<Locale, Dict> = {
     "reviews.eyebrow": "Real people, real feedback",
     "reviews.heading": "Loved by families everywhere",
 
+    "lifestyle.line": "Soft cotton, real bows, made to be lived in.",
+    "lifestyle.cta": "Discover the collection",
     "footer.explore": "Explore",
     "footer.help": "Help",
     "footer.stay": "Stay close",
@@ -119,7 +121,7 @@ export const dict: Record<Locale, Dict> = {
     "hero.titleTemplate": "Gemaakt door een {0} voor de jouwe.",
     "hero.titleEmph": "familie,",
     "hero.subtitle":
-      "Handgemaakte details, natuurlijke stoffen en echte, stevige strikken, nooit gelijmd. Zachte, duurzame kleding voor de kleintjes en de mama's die van ze houden.",
+      "Handgemaakte details, natuurlijke stoffen, echte strikken. Zachte, duurzame kleding voor de kleintjes en hun mama's.",
     "hero.cta1": "Bekijk de collectie",
     "hero.cta2": "Ons verhaal",
     "hero.trust": "Geliefd door 5.000+ gezinnen",
@@ -149,13 +151,13 @@ export const dict: Record<Locale, Dict> = {
     "pillars.headingEmph": "waarom",
     "pillars.1t": "Zorgvuldig ontwerp",
     "pillars.1b":
-      "Alles wat we doen begint met waarom. Elke naad, elke strik, elke stof is doordacht en nooit gehaast.",
+      "Elke naad, elke strik, elke stof: doordacht en nooit gehaast.",
     "pillars.2t": "Met zorg gemaakt",
     "pillars.2b":
-      "Wij geloven in beter en duurzamer. Natuurlijke stoffen, kleine oplages en kleding om door te geven, niet om weg te gooien.",
+      "Natuurlijke stoffen, kleine oplages, gemaakt om door te geven.",
     "pillars.3t": "Een familie met een doel",
     "pillars.3b":
-      "Echte mensen die mooie producten maken. Madessa is gemaakt door een familie, voor de jouwe, met de hand genaaid en met liefde ingepakt.",
+      "Gemaakt door een familie, voor de jouwe. Met de hand en met liefde.",
 
     "newsletter.perk": "10% korting op je eerste bestelling",
     "newsletter.heading": "Sluit je aan bij de familie",
@@ -174,6 +176,8 @@ export const dict: Record<Locale, Dict> = {
     "reviews.eyebrow": "Echte mensen, echte reacties",
     "reviews.heading": "Geliefd bij gezinnen overal",
 
+    "lifestyle.line": "Zachte katoen, echte strikken, gemaakt om in te leven.",
+    "lifestyle.cta": "Ontdek de collectie",
     "footer.explore": "Ontdek",
     "footer.help": "Hulp",
     "footer.stay": "Blijf in de buurt",
@@ -205,7 +209,7 @@ export const dict: Record<Locale, Dict> = {
     "hero.titleTemplate": "Bir {0} tarafından, sizin için.",
     "hero.titleEmph": "aile",
     "hero.subtitle":
-      "El yapımı detaylar, doğal kumaşlar ve gerçek, sağlam fiyonklar, asla yapıştırılmaz. Küçükler ve onları seven anneler için yumuşak, sürdürülebilir giysiler.",
+      "El yapımı detaylar, doğal kumaşlar, gerçek fiyonklar. Küçükler ve anneleri için yumuşak, sürdürülebilir giysiler.",
     "hero.cta1": "Koleksiyonu keşfet",
     "hero.cta2": "Hikayemiz",
     "hero.trust": "5.000+ aile tarafından seviliyor",
@@ -235,13 +239,13 @@ export const dict: Record<Locale, Dict> = {
     "pillars.headingEmph": "neden",
     "pillars.1t": "Özenli tasarım",
     "pillars.1b":
-      "Yaptığımız her şey nedenle başlar. Her dikiş, her fiyonk, her kumaş özenle seçilir, asla aceleye gelmez.",
+      "Her dikiş, her fiyonk, her kumaş: özenle seçilir, asla aceleye gelmez.",
     "pillars.2t": "Özenle üretildi",
     "pillars.2b":
-      "Daha iyi ve sürdürülebilir üretime inanıyoruz. Doğal kumaşlar, küçük partiler ve atılmak için değil, devredilmek için yapılmış parçalar.",
+      "Doğal kumaşlar, küçük partiler, devredilmek için yapıldı.",
     "pillars.3t": "Amacı olan bir aile",
     "pillars.3b":
-      "Güzel ürünler yapan gerçek insanlar. Madessa bir aile tarafından, sizinkiler için elde dikilir ve sevgiyle paketlenir.",
+      "Bir aile tarafından, sizinkiler için. Elde ve sevgiyle dikilir.",
 
     "newsletter.perk": "İlk siparişinde %10 indirim",
     "newsletter.heading": "Aramıza katıl",
@@ -260,6 +264,8 @@ export const dict: Record<Locale, Dict> = {
     "reviews.eyebrow": "Gerçek insanlar, gerçek yorumlar",
     "reviews.heading": "Her yerde aileler tarafından seviliyor",
 
+    "lifestyle.line": "Yumuşak pamuk, gerçek fiyonklar, yaşanmak için yapıldı.",
+    "lifestyle.cta": "Koleksiyonu keşfet",
     "footer.explore": "Keşfet",
     "footer.help": "Yardım",
     "footer.stay": "Bağlantıda kal",

@@ -2,16 +2,14 @@
 
 import Image from "next/image";
 import Reveal from "./Reveal";
-import { site } from "@/data/site";
-import { useCatalog } from "@/components/catalog/CatalogContext";
+import { site, gallery } from "@/data/site";
 import { useT } from "@/components/i18n/LocaleContext";
 
 export default function InstagramStrip() {
-  const { products } = useCatalog();
   const { t } = useT();
   const [igPre, igPost] = t("ig.headingTemplate").split("{0}");
-  // Uses stable product imagery as the social grid (IG CDN links expire).
-  const grid = products.slice(0, 6);
+  // Real lifestyle photography (stable Shopify CDN; IG feed links expire).
+  const grid = gallery;
   return (
     <section className="px-6 py-16 lg:px-10 lg:py-20">
       <div className="mx-auto max-w-7xl">
@@ -36,23 +34,27 @@ export default function InstagramStrip() {
           </a>
         </Reveal>
 
-        <div className="mt-8 grid grid-cols-3 gap-2 sm:gap-3 md:grid-cols-6">
-          {grid.map((p, i) => (
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
+          {grid.map((src, i) => (
             <Reveal
-              key={p.slug}
+              key={i}
               delay={i * 0.05}
-              className="group relative aspect-square overflow-hidden rounded-xl"
+              className="group relative aspect-square overflow-hidden rounded-2xl"
             >
-              <a href={site.socials.instagram} target="_blank" rel="noopener">
+              <a href={site.socials.instagram} target="_blank" rel="noopener" aria-label="View on Instagram">
                 <Image
-                  src={p.image}
+                  src={src}
                   alt=""
                   fill
-                  sizes="(max-width: 768px) 33vw, 16vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span className="absolute inset-0 grid place-items-center bg-ink/0 text-paper opacity-0 transition-all duration-300 group-hover:bg-ink/35 group-hover:opacity-100">
-                  ✿
+                <span className="absolute inset-0 grid place-items-center bg-ink/0 opacity-0 transition-all duration-300 group-hover:bg-ink/30 group-hover:opacity-100">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#fbf6ee" strokeWidth="1.6" className="h-7 w-7">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="#fbf6ee" />
+                  </svg>
                 </span>
               </a>
             </Reveal>

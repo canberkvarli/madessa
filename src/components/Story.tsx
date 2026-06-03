@@ -47,15 +47,13 @@ export default function Story() {
           </h2>
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-soft">
             <p>
-              “When I was little I had this birthday dress. Purple, with bows.
-              I never forgot how it made me feel.” Madessa began in a home, with
-              a family who wanted to make pieces that hold that same kind of
-              memory.
+              “When I was little I had a birthday dress, purple, with bows. I
+              never forgot how it made me feel.” That feeling is where Madessa
+              began.
             </p>
             <p>
-              Today we still cut, stitch and finish in small batches. Soft
-              cotton so she can move freely. Voluminous tulle that survives the
-              spins. Real, structured bows. Made by a family, for yours.
+              Still cut and stitched by hand, in small batches. Soft cotton,
+              voluminous tulle, real bows. Made by a family, for yours.
             </p>
           </div>
 

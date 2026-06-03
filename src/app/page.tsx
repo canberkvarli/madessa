@@ -9,6 +9,7 @@ import Reviews from "@/components/Reviews";
 import InstagramStrip from "@/components/InstagramStrip";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import LifestyleBreak from "@/components/LifestyleBreak";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <OfferStrip />
         <Collections />
+        <LifestyleBreak />
         <ValuePillars />
         <Story />
         <Reviews />

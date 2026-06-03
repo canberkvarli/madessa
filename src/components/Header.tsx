@@ -36,26 +36,13 @@ export default function Header() {
       </div>
 
       <nav className="grid grid-cols-[auto_1fr_auto] items-center gap-4 px-6 lg:px-10 py-3 lg:gap-8">
-        {/* left: logo + nav */}
-        <div className="flex items-center gap-7 justify-self-start">
-          <a href="#top" className="group flex items-baseline gap-2">
-            <span className="font-display text-2xl lg:text-3xl tracking-tight">
-              Madessa
-            </span>
-            <span className="hidden sm:inline h-1.5 w-1.5 rounded-full bg-clay transition-transform duration-500 group-hover:scale-150" />
-          </a>
-          <div className="hidden items-center gap-7 lg:flex">
-            {nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="relative text-sm tracking-wide text-ink/75 hover:text-ink transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-clay after:transition-all after:duration-300 hover:after:w-full"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-        </div>
+        {/* left: logo, standalone */}
+        <a href="#top" className="group flex items-baseline gap-2 justify-self-start">
+          <span className="font-display text-2xl lg:text-3xl tracking-tight">
+            Madessa
+          </span>
+          <span className="hidden sm:inline h-1.5 w-1.5 rounded-full bg-clay transition-transform duration-500 group-hover:scale-150" />
+        </a>
 
         {/* center: wide search */}
         <button
@@ -68,9 +55,6 @@ export default function Header() {
             <path d="m20 20-3.2-3.2" strokeLinecap="round" />
           </svg>
           <span className="flex-1 text-left">Search dresses, sets, knitwear, baby &amp; mama…</span>
-          <kbd className="rounded border border-ink/15 px-1.5 py-0.5 text-[0.6rem] uppercase tracking-wider">
-            ⌘K
-          </kbd>
         </button>
 
         {/* right: cart + mobile controls */}
@@ -89,11 +73,15 @@ export default function Header() {
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
-            className="md:hidden flex flex-col gap-1.5 p-2"
+            aria-expanded={open}
+            className="flex items-center gap-2.5 rounded-full border border-ink/15 bg-paper/50 px-3.5 py-2.5 backdrop-blur transition-colors hover:border-ink/40"
           >
-            <span className={`h-px w-6 bg-ink transition-all ${open ? "translate-y-[7px] rotate-45" : ""}`} />
-            <span className={`h-px w-6 bg-ink transition-all ${open ? "opacity-0" : ""}`} />
-            <span className={`h-px w-6 bg-ink transition-all ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
+            <span className="flex flex-col gap-1">
+              <span className={`h-px w-4.5 bg-ink transition-all duration-300 ${open ? "translate-y-[5px] rotate-45" : ""}`} />
+              <span className={`h-px w-4.5 bg-ink transition-all duration-300 ${open ? "opacity-0" : ""}`} />
+              <span className={`h-px w-4.5 bg-ink transition-all duration-300 ${open ? "-translate-y-[5px] -rotate-45" : ""}`} />
+            </span>
+            <span className="hidden text-sm tracking-wide sm:inline">Menu</span>
           </button>
         </div>
       </nav>
@@ -105,31 +93,40 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden overflow-hidden bg-paper/95 backdrop-blur-xl border-t border-ink/10"
+            className="overflow-hidden border-t border-ink/10 bg-paper/95 backdrop-blur-xl"
           >
-            <div className="flex flex-col px-6 py-5 gap-1">
-              {nav.map((item) => (
+            <div className="mx-auto flex max-w-2xl flex-col gap-1 px-6 py-7">
+              {nav.map((item, i) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="font-display text-2xl py-2 border-b border-ink/5"
+                  className="group flex items-center justify-between border-b border-ink/5 py-3 font-display text-3xl transition-colors hover:text-clay"
                 >
                   {item.label}
+                  <span className="text-base text-ink/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-clay">
+                    0{i + 1}
+                  </span>
                 </a>
               ))}
-              <div className="mt-4 flex flex-col gap-1 text-sm text-ink-soft">
-                <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-                <a href={site.contact.phoneHref}>{site.contact.phone}</a>
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+                <div className="flex flex-col gap-1 text-sm text-ink-soft">
+                  <a href={`mailto:${site.contact.email}`} className="hover:text-clay">
+                    {site.contact.email}
+                  </a>
+                  <a href={site.contact.phoneHref} className="hover:text-clay">
+                    {site.contact.phone}
+                  </a>
+                </div>
+                <a
+                  href={site.shopUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className="rounded-full bg-ink px-6 py-3 text-sm tracking-wide text-paper transition-colors hover:bg-clay"
+                >
+                  Visit full shop →
+                </a>
               </div>
-              <a
-                href={site.shopUrl}
-                target="_blank"
-                rel="noopener"
-                className="mt-4 text-center rounded-full bg-ink text-paper px-5 py-3 text-sm tracking-wide"
-              >
-                Shop now →
-              </a>
             </div>
           </motion.div>
         )}

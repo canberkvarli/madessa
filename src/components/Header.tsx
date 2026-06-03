@@ -35,40 +35,53 @@ export default function Header() {
         </a>
       </div>
 
-      <nav className="flex items-center justify-between px-6 lg:px-10 py-3">
-        <a href="#top" className="group flex items-baseline gap-2">
+      <nav className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-6 lg:px-10 py-3">
+        {/* left: logo */}
+        <a href="#top" className="group flex items-baseline gap-2 justify-self-start">
           <span className="font-display text-2xl lg:text-3xl tracking-tight">
             Madessa
           </span>
           <span className="hidden sm:inline h-1.5 w-1.5 rounded-full bg-clay transition-transform duration-500 group-hover:scale-150" />
         </a>
 
-        <div className="hidden md:flex items-center gap-9">
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="relative text-sm tracking-wide text-ink/80 hover:text-ink transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-clay after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
+        {/* center: search */}
+        <button
+          onClick={() => window.dispatchEvent(new Event("madessa:open-search"))}
+          aria-label="Search products"
+          className="hidden md:flex items-center gap-2 w-[17rem] lg:w-[24rem] justify-self-center rounded-full border border-ink/15 bg-paper/60 px-4 py-2.5 text-sm text-ink-soft backdrop-blur transition-colors hover:border-clay/60 hover:bg-paper"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4 text-clay">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.2-3.2" strokeLinecap="round" />
+          </svg>
+          <span className="flex-1 text-left">Search dresses, sets, knitwear…</span>
+          <kbd className="rounded border border-ink/15 px-1.5 text-[0.6rem] uppercase tracking-wider">
+            ⌘K
+          </kbd>
+        </button>
 
-        <div className="flex items-center gap-3">
+        {/* right: nav + actions */}
+        <div className="flex items-center justify-end gap-5 justify-self-end lg:gap-6">
+          <div className="hidden items-center gap-6 lg:flex">
+            {nav.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="relative text-sm tracking-wide text-ink/80 hover:text-ink transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-clay after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
           <button
             onClick={() => window.dispatchEvent(new Event("madessa:open-search"))}
             aria-label="Search"
-            className="group flex items-center gap-2 rounded-full border border-ink/15 bg-paper/50 px-3.5 py-2 text-sm text-ink-soft backdrop-blur transition-colors hover:border-ink/40"
+            className="grid h-10 w-10 place-items-center rounded-full border border-ink/15 bg-paper/50 md:hidden"
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4 text-clay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5 text-clay">
               <circle cx="11" cy="11" r="7" />
               <path d="m20 20-3.2-3.2" strokeLinecap="round" />
             </svg>
-            <span className="hidden lg:inline">Search</span>
-            <kbd className="hidden rounded border border-ink/15 px-1.5 text-[0.6rem] uppercase tracking-wider lg:inline">
-              ⌘K
-            </kbd>
           </button>
           <a
             href={site.shopUrl}

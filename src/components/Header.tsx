@@ -35,44 +35,46 @@ export default function Header() {
         </a>
       </div>
 
-      <nav className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-6 lg:px-10 py-3">
-        {/* left: logo */}
-        <a href="#top" className="group flex items-baseline gap-2 justify-self-start">
-          <span className="font-display text-2xl lg:text-3xl tracking-tight">
-            Madessa
-          </span>
-          <span className="hidden sm:inline h-1.5 w-1.5 rounded-full bg-clay transition-transform duration-500 group-hover:scale-150" />
-        </a>
-
-        {/* center: search */}
-        <button
-          onClick={() => window.dispatchEvent(new Event("madessa:open-search"))}
-          aria-label="Search products"
-          className="hidden md:flex items-center gap-2 w-[17rem] lg:w-[24rem] justify-self-center rounded-full border border-ink/15 bg-paper/60 px-4 py-2.5 text-sm text-ink-soft backdrop-blur transition-colors hover:border-clay/60 hover:bg-paper"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4 text-clay">
-            <circle cx="11" cy="11" r="7" />
-            <path d="m20 20-3.2-3.2" strokeLinecap="round" />
-          </svg>
-          <span className="flex-1 text-left">Search dresses, sets, knitwear…</span>
-          <kbd className="rounded border border-ink/15 px-1.5 text-[0.6rem] uppercase tracking-wider">
-            ⌘K
-          </kbd>
-        </button>
-
-        {/* right: nav + actions */}
-        <div className="flex items-center justify-end gap-5 justify-self-end lg:gap-6">
-          <div className="hidden items-center gap-6 lg:flex">
+      <nav className="grid grid-cols-[auto_1fr_auto] items-center gap-4 px-6 lg:px-10 py-3 lg:gap-8">
+        {/* left: logo + nav */}
+        <div className="flex items-center gap-7 justify-self-start">
+          <a href="#top" className="group flex items-baseline gap-2">
+            <span className="font-display text-2xl lg:text-3xl tracking-tight">
+              Madessa
+            </span>
+            <span className="hidden sm:inline h-1.5 w-1.5 rounded-full bg-clay transition-transform duration-500 group-hover:scale-150" />
+          </a>
+          <div className="hidden items-center gap-7 lg:flex">
             {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="relative text-sm tracking-wide text-ink/80 hover:text-ink transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-clay after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-sm tracking-wide text-ink/75 hover:text-ink transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-clay after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.label}
               </a>
             ))}
           </div>
+        </div>
+
+        {/* center: wide search */}
+        <button
+          onClick={() => window.dispatchEvent(new Event("madessa:open-search"))}
+          aria-label="Search products"
+          className="group hidden md:flex w-full max-w-xl items-center gap-3 justify-self-center rounded-full border border-ink/15 bg-paper/60 px-5 py-3 text-sm text-ink-soft backdrop-blur transition-colors hover:border-clay/60 hover:bg-paper"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4.5 w-4.5 text-clay">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.2-3.2" strokeLinecap="round" />
+          </svg>
+          <span className="flex-1 text-left">Search dresses, sets, knitwear, baby &amp; mama…</span>
+          <kbd className="rounded border border-ink/15 px-1.5 py-0.5 text-[0.6rem] uppercase tracking-wider">
+            ⌘K
+          </kbd>
+        </button>
+
+        {/* right: cart + mobile controls */}
+        <div className="flex items-center gap-2 justify-self-end sm:gap-3">
           <button
             onClick={() => window.dispatchEvent(new Event("madessa:open-search"))}
             aria-label="Search"
@@ -83,15 +85,6 @@ export default function Header() {
               <path d="m20 20-3.2-3.2" strokeLinecap="round" />
             </svg>
           </button>
-          <a
-            href={site.shopUrl}
-            target="_blank"
-            rel="noopener"
-            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5 text-sm tracking-wide transition-all duration-300 hover:bg-clay hover:scale-[1.03]"
-          >
-            Shop now
-            <span aria-hidden>→</span>
-          </a>
           <CartButton />
           <button
             onClick={() => setOpen((v) => !v)}

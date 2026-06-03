@@ -7,6 +7,7 @@ import {
   type Catalog,
   type ShopifyProduct,
 } from "@/lib/catalog-shared";
+import { getStorefrontProducts, storefrontConfigured } from "@/lib/storefront";
 
 export type { Catalog };
 
@@ -42,6 +43,12 @@ async function fetchPage(page: number, attempts: number): Promise<ShopifyProduct
 }
 
 export const getCatalog = cache(async (): Promise<Catalog> => {
+  // Preferred: official Storefront API (reliable from any server) when a token is set.
+  if (storefrontConfigured) {
+    const sf = await getStorefrontProducts();
+    if (sf && sf.length >= 6) return buildCatalog(sf, true);
+  }
+  // Otherwise try the public feed (works locally / non-blocked networks).
   try {
     const all: ShopifyProduct[] = [];
     for (let page = 1; page <= MAX_PAGES; page++) {

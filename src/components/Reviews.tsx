@@ -61,10 +61,14 @@ export default function Reviews() {
                 key={idx}
                 onClick={() => setI(idx)}
                 aria-label={`Review ${idx + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  idx === i ? "w-7 bg-clay" : "w-1.5 bg-paper/30"
-                }`}
-              />
+                className="grid h-6 w-6 place-items-center"
+              >
+                <span
+                  className={`block h-1.5 rounded-full transition-all duration-300 ${
+                    idx === i ? "w-6 bg-clay" : "w-1.5 bg-paper/30"
+                  }`}
+                />
+              </button>
             ))}
           </div>
           <button

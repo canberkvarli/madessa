@@ -69,6 +69,7 @@ function mapProduct(p: ShopifyProduct): Product | null {
     price,
     compareAt,
     image: img,
+    images: (p.images ?? []).map((i) => i.src).slice(0, 5),
     blurb: blurbFrom(p.body_html),
     variantId: String(v.id),
     available: p.variants?.some((x) => x.available) ?? true,

@@ -23,6 +23,8 @@ export const dict: Record<Locale, Dict> = {
     "nav.contact": "Contact",
     "nav.about": "About",
     "nav.shipping": "Shipping & Returns",
+    "nav.sustainability": "Materials & Care",
+    "nav.journal": "Journal",
     "nav.faq": "FAQ",
 
     "search.placeholder": "Search dresses, sets, knitwear, baby & mama…",
@@ -88,6 +90,9 @@ export const dict: Record<Locale, Dict> = {
     "reviews.eyebrow": "Real people, real feedback",
     "reviews.heading": "Loved by families everywhere",
 
+    "klarna.line": "or 3 interest-free payments of {0} with Klarna",
+    "recent.heading": "Recently viewed",
+    "cart.complete": "Complete the look",
     "cats.eyebrow": "Shop by category",
     "cats.heading": "Find their next favourite",
     "lifestyle.line": "Soft cotton, real bows, made to be lived in.",
@@ -113,6 +118,8 @@ export const dict: Record<Locale, Dict> = {
     "nav.contact": "Contact",
     "nav.about": "Over ons",
     "nav.shipping": "Verzending & Retour",
+    "nav.sustainability": "Materialen & Verzorging",
+    "nav.journal": "Journaal",
     "nav.faq": "Veelgestelde vragen",
 
     "search.placeholder": "Zoek jurken, sets, gebreid, baby & mama…",
@@ -178,6 +185,9 @@ export const dict: Record<Locale, Dict> = {
     "reviews.eyebrow": "Echte mensen, echte reacties",
     "reviews.heading": "Geliefd bij gezinnen overal",
 
+    "klarna.line": "of 3 rentevrije betalingen van {0} met Klarna",
+    "recent.heading": "Onlangs bekeken",
+    "cart.complete": "Maak de look compleet",
     "cats.eyebrow": "Shop per categorie",
     "cats.heading": "Vind hun nieuwe favoriet",
     "lifestyle.line": "Zachte katoen, echte strikken, gemaakt om in te leven.",
@@ -203,6 +213,8 @@ export const dict: Record<Locale, Dict> = {
     "nav.contact": "İletişim",
     "nav.about": "Hakkımızda",
     "nav.shipping": "Kargo & İade",
+    "nav.sustainability": "Malzeme & Bakım",
+    "nav.journal": "Günlük",
     "nav.faq": "S.S.S.",
 
     "search.placeholder": "Elbise, takım, triko, bebek & anne ara…",
@@ -268,6 +280,9 @@ export const dict: Record<Locale, Dict> = {
     "reviews.eyebrow": "Gerçek insanlar, gerçek yorumlar",
     "reviews.heading": "Her yerde aileler tarafından seviliyor",
 
+    "klarna.line": "veya Klarna ile 3 faizsiz {0} ödeme",
+    "recent.heading": "Son görüntülenenler",
+    "cart.complete": "Görünümü tamamla",
     "cats.eyebrow": "Kategoriye göre",
     "cats.heading": "Yeni favorilerini bul",
     "lifestyle.line": "Yumuşak pamuk, gerçek fiyonklar, yaşanmak için yapıldı.",

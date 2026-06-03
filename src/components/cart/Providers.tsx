@@ -7,6 +7,8 @@ import { WishlistProvider } from "@/components/wishlist/WishlistContext";
 import WishlistDrawer from "@/components/wishlist/WishlistDrawer";
 import SearchCommand from "@/components/SearchCommand";
 import SizeGuide from "@/components/SizeGuide";
+import QuickView from "@/components/QuickView";
+import NewsletterPopup from "@/components/NewsletterPopup";
 import { LocaleProvider } from "@/components/i18n/LocaleContext";
 import type { Product } from "@/data/products";
 
@@ -38,6 +40,8 @@ export default function Providers({
             <WishlistDrawer />
             <SearchCommand />
             <SizeGuide />
+            <QuickView />
+            <NewsletterPopup />
           </WishlistProvider>
         </CartProvider>
       </CatalogProvider>

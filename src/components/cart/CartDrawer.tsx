@@ -4,6 +4,8 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { useCart } from "./CartContext";
 import { productUrl } from "@/data/products";
+import { useCatalog } from "@/components/catalog/CatalogContext";
+import { useT } from "@/components/i18n/LocaleContext";
 
 export default function CartDrawer() {
   const {
@@ -12,13 +14,18 @@ export default function CartDrawer() {
     subtotal,
     isOpen,
     close,
+    add,
     setQty,
     remove,
     checkoutUrl,
     freeShipThreshold,
     remainingForFreeShip,
   } = useCart();
+  const { products } = useCatalog();
+  const { t } = useT();
 
+  const inCart = new Set(lines.map((l) => l.product.slug));
+  const suggestions = products.filter((p) => !inCart.has(p.slug)).slice(0, 3);
   const pct = Math.min(100, (subtotal / freeShipThreshold) * 100);
 
   return (
@@ -172,6 +179,33 @@ export default function CartDrawer() {
                 </ul>
               )}
             </div>
+
+            {/* complete the look */}
+            {lines.length > 0 && suggestions.length > 0 && (
+              <div className="border-t border-ink/10 px-6 py-4">
+                <p className="text-[0.7rem] uppercase tracking-[0.2em] text-ink-soft">
+                  {t("cart.complete")}
+                </p>
+                <div className="mt-3 flex gap-3">
+                  {suggestions.map((p) => (
+                    <button
+                      key={p.slug}
+                      onClick={() => add(p.slug)}
+                      className="group flex-1 text-left"
+                      aria-label={`Add ${p.title}`}
+                    >
+                      <div className="relative aspect-square overflow-hidden rounded-lg bg-cream">
+                        <Image src={p.image} alt={p.title} fill sizes="80px" className="object-cover" />
+                        <span className="absolute inset-0 grid place-items-center bg-ink/0 text-lg text-paper opacity-0 transition-all duration-300 group-hover:bg-ink/35 group-hover:opacity-100">
+                          +
+                        </span>
+                      </div>
+                      <p className="mt-1 truncate text-[0.7rem]">€{p.price}</p>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* footer / checkout */}
             {lines.length > 0 && (

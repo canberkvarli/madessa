@@ -67,6 +67,8 @@ export const nav = [
 // Secondary links used in the footer.
 export const helpNav = [
   { key: "nav.about", label: "About", href: "/about" },
+  { key: "nav.sustainability", label: "Materials & Care", href: "/sustainability" },
+  { key: "nav.journal", label: "Journal", href: "/journal" },
   { key: "nav.shipping", label: "Shipping & Returns", href: "/shipping" },
   { key: "nav.faq", label: "FAQ", href: "/faq" },
   { key: "nav.contact", label: "Contact", href: "/contact" },

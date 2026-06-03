@@ -11,6 +11,7 @@ import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import LifestyleBreak from "@/components/LifestyleBreak";
 import CategoryBand from "@/components/CategoryBand";
+import RecentlyViewed from "@/components/RecentlyViewed";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <ValuePillars />
         <Story />
         <Reviews />
+        <RecentlyViewed />
         <InstagramStrip />
         <Newsletter />
       </main>

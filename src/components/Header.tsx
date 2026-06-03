@@ -23,7 +23,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      {/* Tiny contact strip — issue #3: email & phone visible up top */}
+      {/* Tiny contact strip: issue #3, email & phone visible up top */}
       <div className="hidden md:flex items-center justify-end gap-6 px-6 lg:px-10 pt-2 text-[0.7rem] tracking-wide text-ink-soft">
         <a href={`mailto:${site.contact.email}`} className="hover:text-clay transition-colors">
           {site.contact.email}
@@ -55,6 +55,20 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => window.dispatchEvent(new Event("madessa:open-search"))}
+            aria-label="Search"
+            className="group flex items-center gap-2 rounded-full border border-ink/15 bg-paper/50 px-3.5 py-2 text-sm text-ink-soft backdrop-blur transition-colors hover:border-ink/40"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4 text-clay">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.2-3.2" strokeLinecap="round" />
+            </svg>
+            <span className="hidden lg:inline">Search</span>
+            <kbd className="hidden rounded border border-ink/15 px-1.5 text-[0.6rem] uppercase tracking-wider lg:inline">
+              ⌘K
+            </kbd>
+          </button>
           <a
             href={site.shopUrl}
             target="_blank"

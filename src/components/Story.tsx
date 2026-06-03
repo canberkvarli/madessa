@@ -43,7 +43,7 @@ export default function Story() {
           </h2>
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-soft">
             <p>
-              “When I was little I had this birthday dress — purple, with bows.
+              “When I was little I had this birthday dress. Purple, with bows.
               I never forgot how it made me feel.” Madessa began in a home, with
               a family who wanted to make pieces that hold that same kind of
               memory.
@@ -51,7 +51,7 @@ export default function Story() {
             <p>
               Today we still cut, stitch and finish in small batches. Soft
               cotton so she can move freely. Voluminous tulle that survives the
-              spins. Real, structured bows. Made by a family — for yours.
+              spins. Real, structured bows. Made by a family, for yours.
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export default function Story() {
             {[
               { v: "100%", l: "natural fabrics" },
               { v: "Small", l: "batch & handmade" },
-              { v: "1–2 days", l: "shipping in NL" },
+              { v: "1-2 days", l: "shipping in NL" },
             ].map((s) => (
               <div key={s.l} className="border-l border-ink/15 pl-4">
                 <p className="font-display text-2xl">{s.v}</p>

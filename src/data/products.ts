@@ -15,7 +15,7 @@ export const products: Product[] = [
     "price": 48,
     "compareAt": 95,
     "image": "https://madessa.co/cdn/shop/files/515595139_742684715115649_8159463199544968301_n.jpg?v=1778175433&width=1946",
-    "blurb": "Soft cotton bodice, multi-layer tulle skirt. A real, structured bow — never glued."
+    "blurb": "Soft cotton bodice, multi-layer tulle skirt. A real, structured bow, never glued."
   },
   {
     "slug": "little-lounge-set-1",
@@ -51,7 +51,7 @@ export const products: Product[] = [
     "price": 83,
     "compareAt": null,
     "image": "https://madessa.co/cdn/shop/files/MD_0075.jpg?v=1748339585&width=1946",
-    "blurb": "Gentle on new skin — our softest knit-and-cotton pairing."
+    "blurb": "Gentle on new skin, our softest knit-and-cotton pairing."
   },
   {
     "slug": "little-stripe-dress",
@@ -60,7 +60,7 @@ export const products: Product[] = [
     "price": 72,
     "compareAt": null,
     "image": "https://madessa.co/cdn/shop/files/MD_0235.jpg?v=1748339152&width=1946",
-    "blurb": "Breezy striped cotton that moves with her. Sizes 1Y–4Y."
+    "blurb": "Breezy striped cotton that moves with her. Sizes 1Y-4Y."
   },
   {
     "slug": "argyle-knit-sweater",
@@ -96,7 +96,7 @@ export const products: Product[] = [
     "price": 48,
     "compareAt": null,
     "image": "https://madessa.co/cdn/shop/files/cloudsweater.png?v=1769092823&width=500",
-    "blurb": "Like a hug — airy cloud knit in undyed natural cotton."
+    "blurb": "Like a hug. Airy cloud knit in undyed natural cotton."
   }
 ];
 

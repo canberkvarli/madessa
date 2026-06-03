@@ -7,7 +7,7 @@ import { products, productUrl } from "@/data/products";
 
 const muse = products[0];
 
-// A gentle, ever-present urgency window (resets every 24h) — no fake dates baked in.
+// A gentle, ever-present urgency window (resets every 24h), no fake dates baked in.
 function useCountdown() {
   const [left, setLeft] = useState({ h: 0, m: 0, s: 0 });
   useEffect(() => {
@@ -99,7 +99,7 @@ export default function OfferStrip() {
                 <span aria-hidden>→</span>
               </a>
               <p className="mt-3 text-xs text-paper/50">
-                ✿ Free shipping over €50 · ships in 1–2 days
+                ✿ Free shipping over €50 · ships in 1-2 days
               </p>
             </div>
           </div>

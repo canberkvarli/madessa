@@ -12,7 +12,7 @@ export default function Newsletter() {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    // Front-end demo only — wire to Shopify/Klaviyo/Mailchimp when ready.
+    // Front-end demo only. Wire to Shopify/Klaviyo/Mailchimp when ready.
     setDone(true);
   };
 

@@ -9,12 +9,14 @@ import Reviews from "@/components/Reviews";
 import InstagramStrip from "@/components/InstagramStrip";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import SearchCommand from "@/components/SearchCommand";
 
 export default function Home() {
   return (
     <>
       <AnnouncementBar />
       <Header />
+      <SearchCommand />
       <main>
         <Hero />
         <OfferStrip />

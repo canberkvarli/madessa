@@ -82,7 +82,7 @@ export default function Footer() {
             </ul>
             <div className="mt-6 rounded-2xl bg-paper/10 p-4 text-sm">
               <p className="font-display text-lg text-clay">Free shipping over €50</p>
-              <p className="text-paper/60">Ships worldwide · 1–2 days in NL</p>
+              <p className="text-paper/60">Ships worldwide · 1-2 days in NL</p>
             </div>
           </div>
         </div>

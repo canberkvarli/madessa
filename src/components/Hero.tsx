@@ -20,7 +20,7 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-12 pt-10 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-10 lg:pt-16">
-        {/* ── Copy ── */}
+        {/*  Copy  */}
         <div className="relative z-10">
           <motion.span
             initial={reduce ? false : { opacity: 0, y: 14 }}
@@ -51,7 +51,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease }}
             className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft"
           >
-            Handmade details, natural fabrics and real, structured bows — never
+            Handmade details, natural fabrics and real, structured bows, never
             glued. Soft, sustainable clothing for little ones and the mamas who
             love them.
           </motion.p>
@@ -100,7 +100,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* ── Image — framed so the full subject is always visible (fix #5) ── */}
+        {/* Image: framed so the full subject is always visible (fix #5) */}
         <motion.div
           initial={reduce ? false : { opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}

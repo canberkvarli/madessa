@@ -4,7 +4,7 @@ const pillars = [
   {
     k: "01",
     title: "Careful design",
-    body: "Everything we do starts with why. Every seam, every bow, every fabric choice is considered — nothing is glued on or rushed.",
+    body: "Everything we do starts with why. Every seam, every bow, every fabric choice is considered, and nothing is glued on or rushed.",
     icon: (
       <path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z" />
     ),
@@ -12,13 +12,13 @@ const pillars = [
   {
     k: "02",
     title: "Made with care",
-    body: "We believe in building better and sustainable. Natural fabrics, small batches, and pieces made to be passed down — not thrown away.",
+    body: "We believe in building better and sustainable. Natural fabrics, small batches, and pieces made to be passed down, not thrown away.",
     icon: <path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z" />,
   },
   {
     k: "03",
     title: "A family with a goal",
-    body: "Real people making great products. Madessa is made by a family, for yours — stitched by hand and wrapped with love.",
+    body: "Real people making great products. Madessa is made by a family, for yours, stitched by hand and wrapped with love.",
     icon: (
       <>
         <circle cx="9" cy="8" r="3" />

@@ -6,7 +6,12 @@ export type Product = {
   available?: boolean;
 };
 
-export const productUrl = (slug: string) => `https://madessa.co/products/${slug}`;
+// NOTE: individual product pages on madessa.co are currently 404ing (stale
+// handles / possible store-domain change). Until the Storefront API provides
+// canonical product URLs, route every product click to the shop's all-products
+// page so nothing dead-ends on a 404. Pass-through slug kept for easy restore.
+const SHOP = "https://madessa.co";
+export const productUrl = (_slug?: string) => `${SHOP}/collections/all`;
 
 export const products: Product[] = [
   {

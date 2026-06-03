@@ -3,6 +3,7 @@
 import { CartProvider } from "./CartContext";
 import CartDrawer from "./CartDrawer";
 import { CatalogProvider } from "@/components/catalog/CatalogContext";
+import SearchCommand from "@/components/SearchCommand";
 import type { Product } from "@/data/products";
 
 export default function Providers({
@@ -28,6 +29,7 @@ export default function Providers({
       <CartProvider>
         {children}
         <CartDrawer />
+        <SearchCommand />
       </CartProvider>
     </CatalogProvider>
   );

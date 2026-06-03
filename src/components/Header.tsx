@@ -26,7 +26,7 @@ export default function Header() {
     >
       {/* main row: logo · big search · cart */}
       <div className="flex items-center gap-4 px-6 py-3.5 lg:gap-8 lg:px-10">
-        <a href="#top" className="group flex shrink-0 items-baseline gap-2">
+        <a href="/" className="group flex shrink-0 items-baseline gap-2">
           <span className="font-display text-2xl tracking-tight lg:text-3xl">
             Madessa
           </span>

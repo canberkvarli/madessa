@@ -144,19 +144,27 @@ export default function Hero() {
             </span>
           </motion.a>
 
-          {/* spinning free-shipping seal */}
-          <div className="absolute -top-4 -right-2 hidden h-24 w-24 sm:grid place-items-center">
-            <svg viewBox="0 0 100 100" className="absolute inset-0 animate-spin-slow text-ink">
+          {/* rotating stamp seal */}
+          <div className="absolute -top-5 -right-3 hidden h-28 w-28 place-items-center sm:grid">
+            <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full animate-spin-slow text-ink">
               <defs>
-                <path id="circlePath" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" />
+                <path id="sealPath" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" />
               </defs>
-              <text className="fill-current text-[0.62rem] uppercase tracking-[0.2em]">
-                <textPath href="#circlePath">
-                  Handmade with care · Free shipping €50 ·
+              <text
+                fill="currentColor"
+                fontSize="8.6"
+                fontWeight="500"
+                letterSpacing="0.6"
+                textLength="226"
+                lengthAdjust="spacingAndGlyphs"
+                style={{ textTransform: "uppercase" }}
+              >
+                <textPath href="#sealPath" startOffset="0">
+                  Handmade with care · Made by a family ·
                 </textPath>
               </text>
             </svg>
-            <span className="text-xl">✿</span>
+            <span className="text-lg text-clay">✿</span>
           </div>
         </motion.div>
       </div>

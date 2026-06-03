@@ -1,10 +1,10 @@
-import { nav, site } from "@/data/site";
+import { nav, helpNav, site } from "@/data/site";
 
 export default function Footer() {
   return (
     <footer id="contact" className="bg-ink px-6 pb-10 pt-16 text-paper lg:px-10">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-[1.5fr_0.8fr_0.9fr_1fr]">
           {/* brand + contact (issue #3) */}
           <div>
             <p className="font-display text-3xl">Madessa</p>
@@ -60,6 +60,22 @@ export default function Footer() {
                   Full shop
                 </a>
               </li>
+            </ul>
+          </div>
+
+          {/* help */}
+          <div>
+            <p className="text-[0.7rem] uppercase tracking-[0.24em] text-paper/40">
+              Help
+            </p>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {helpNav.map((n) => (
+                <li key={n.href}>
+                  <a href={n.href} className="text-paper/80 transition-colors hover:text-clay">
+                    {n.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

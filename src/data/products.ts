@@ -21,7 +21,7 @@ export const products: Product[] = [
     "category": "Dresses",
     "price": 48,
     "compareAt": 95,
-    "image": "https://madessa.co/cdn/shop/files/515595139_742684715115649_8159463199544968301_n.jpg?v=1778175433&width=1946",
+    "image": "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/515595139_742684715115649_8159463199544968301_n.jpg?v=1778175433&width=1946",
     "blurb": "Soft cotton bodice, multi-layer tulle skirt. A real, structured bow, never glued."
   },
   {
@@ -31,7 +31,7 @@ export const products: Product[] = [
     "category": "Sets",
     "price": 54,
     "compareAt": null,
-    "image": "https://madessa.co/cdn/shop/files/2F4D9AC7-4E24-40AB-A75D-67050EA952A9.jpg?v=1749718485&width=1946",
+    "image": "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/2F4D9AC7-4E24-40AB-A75D-67050EA952A9.jpg?v=1749718485&width=1946",
     "blurb": "The everyday set. Buttery cotton, made for play and naps alike."
   },
   {
@@ -41,7 +41,7 @@ export const products: Product[] = [
     "category": "Sets",
     "price": 66,
     "compareAt": null,
-    "image": "https://madessa.co/cdn/shop/files/FullSizeRender_b60c3b0c-68e9-4532-8d0d-da6b6bf94a86.jpg?v=1749717900&width=1946",
+    "image": "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/FullSizeRender_b60c3b0c-68e9-4532-8d0d-da6b6bf94a86.jpg?v=1749717900&width=1946",
     "blurb": "Mix-and-match comfort for busy little days out."
   },
   {
@@ -51,7 +51,7 @@ export const products: Product[] = [
     "category": "Baby",
     "price": 72,
     "compareAt": null,
-    "image": "https://madessa.co/cdn/shop/files/MD_0878.jpg?v=1749227491&width=1946",
+    "image": "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/MD_0878.jpg?v=1749227491&width=1946",
     "blurb": "One-piece freedom for crawlers and first-steppers."
   },
   {
@@ -61,7 +61,7 @@ export const products: Product[] = [
     "category": "Sets",
     "price": 83,
     "compareAt": null,
-    "image": "https://madessa.co/cdn/shop/files/MD_0075.jpg?v=1748339585&width=1946",
+    "image": "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/MD_0075.jpg?v=1748339585&width=1946",
     "blurb": "Gentle on new skin, our softest knit-and-cotton pairing."
   },
   {
@@ -71,7 +71,7 @@ export const products: Product[] = [
     "category": "Dresses",
     "price": 72,
     "compareAt": null,
-    "image": "https://madessa.co/cdn/shop/files/MD_0235.jpg?v=1748339152&width=1946",
+    "image": "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/MD_0235.jpg?v=1748339152&width=1946",
     "blurb": "Breezy striped cotton that moves with her. Sizes 1Y-4Y."
   },
   {
@@ -81,7 +81,7 @@ export const products: Product[] = [
     "category": "Knitwear",
     "price": 54,
     "compareAt": null,
-    "image": "https://madessa.co/cdn/shop/files/f5d134c5-a1d6-4ff7-8d89-4cab0696179f.png?v=1769095360&width=500",
+    "image": "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/f5d134c5-a1d6-4ff7-8d89-4cab0696179f.png?v=1769095360&width=500",
     "blurb": "Hand-finished argyle in a heritage knit. Warm without the weight."
   },
   {
@@ -91,7 +91,7 @@ export const products: Product[] = [
     "category": "Baby",
     "price": 19,
     "compareAt": 36,
-    "image": "https://madessa.co/cdn/shop/files/whiteshirt.png?v=1769096157&width=500",
+    "image": "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/whiteshirt.png?v=1769096157&width=500",
     "blurb": "A crisp little staple in pure breathable cotton."
   },
   {
@@ -101,7 +101,7 @@ export const products: Product[] = [
     "category": "Sets",
     "price": 72,
     "compareAt": null,
-    "image": "https://madessa.co/cdn/shop/files/brownset.png?v=1769092929&width=500",
+    "image": "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/brownset.png?v=1769092929&width=500",
     "blurb": "Earthy tones, straight-leg cotton. Cozy from morning to night."
   },
   {
@@ -111,7 +111,7 @@ export const products: Product[] = [
     "category": "Knitwear",
     "price": 48,
     "compareAt": null,
-    "image": "https://madessa.co/cdn/shop/files/cloudsweater.png?v=1769092823&width=500",
+    "image": "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/cloudsweater.png?v=1769092823&width=500",
     "blurb": "Like a hug. Airy cloud knit in undyed natural cotton."
   }
 ];

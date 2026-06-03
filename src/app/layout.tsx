@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
-import { site } from "@/data/site";
 import Providers from "@/components/cart/Providers";
 import { getCatalog } from "@/lib/shopify";
 
@@ -27,8 +26,14 @@ export const metadata: Metadata = {
     title: "Madessa · Made by a family, for yours",
     description:
       "Handmade details. Natural fabrics. Soft, sustainable clothing for little ones and mamas. Free shipping over €50.",
-    images: [site.heroImage],
     type: "website",
+    siteName: "Madessa",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Madessa — Made by a family, for yours",
+    description:
+      "Handmade details. Natural fabrics. Soft, sustainable clothing for little ones and mamas. Free shipping over €50.",
   },
 };
 

@@ -36,12 +36,20 @@ export const site = {
 
   // Hero image: the real 3840px Madessa banner, art-directed so it is never cropped wrong on desktop.
   heroImage:
-    "https://madessa.co/cdn/shop/files/9AE826E0-F7F1-4638-9319-5749E2460641.png?v=1778184439&width=3840",
+    "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/9AE826E0-F7F1-4638-9319-5749E2460641.png?v=1778184439&width=3840",
 };
 
 export const nav = [
-  { label: "Shop", href: "#shop" },
-  { label: "Our Story", href: "#story" },
-  { label: "Loved by", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
+  { label: "Shop", href: "/#shop" },
+  { label: "Our Story", href: "/#story" },
+  { label: "Loved by", href: "/#reviews" },
+  { label: "Contact", href: "/contact" },
+];
+
+// Secondary links used in the footer.
+export const helpNav = [
+  { label: "About", href: "/about" },
+  { label: "Shipping & Returns", href: "/shipping" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];

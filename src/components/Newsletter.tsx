@@ -8,11 +8,21 @@ import { site } from "@/data/site";
 export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
-    // Front-end demo only. Wire to Shopify/Klaviyo/Mailchimp when ready.
+    if (!email || sending) return;
+    setSending(true);
+    try {
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+    } catch {
+      // even if delivery isn't wired yet, thank the visitor
+    }
     setDone(true);
   };
 
@@ -55,9 +65,10 @@ export default function Newsletter() {
               />
               <button
                 type="submit"
-                className="shrink-0 rounded-full bg-ink px-7 py-3.5 text-sm tracking-wide text-paper transition-all duration-300 hover:bg-clay hover:scale-[1.03]"
+                disabled={sending}
+                className="shrink-0 rounded-full bg-ink px-7 py-3.5 text-sm tracking-wide text-paper transition-all duration-300 hover:bg-clay hover:scale-[1.03] disabled:opacity-70"
               >
-                Claim 10% off
+                {sending ? "Joining…" : "Claim 10% off"}
               </button>
             </form>
           )}

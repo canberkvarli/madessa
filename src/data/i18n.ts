@@ -1,0 +1,272 @@
+// Homepage + chrome translations (EN / NL / TR). Sub-page prose & policies
+// stay English for now. {0} marks an emphasised word rendered in clay.
+export const locales = ["en", "nl", "tr"] as const;
+export type Locale = (typeof locales)[number];
+
+export const localeLabels: Record<Locale, string> = {
+  en: "EN",
+  nl: "NL",
+  tr: "TR",
+};
+
+type Dict = Record<string, string>;
+
+export const dict: Record<Locale, Dict> = {
+  en: {
+    "announce.1": "Free shipping on orders over €50",
+    "announce.2": "10% off your first order · join the family below",
+    "announce.3": "Handmade in small batches, shipped worldwide",
+
+    "nav.shop": "Shop",
+    "nav.story": "Our Story",
+    "nav.loved": "Loved by",
+    "nav.contact": "Contact",
+    "nav.about": "About",
+    "nav.shipping": "Shipping & Returns",
+    "nav.faq": "FAQ",
+
+    "search.placeholder": "Search dresses, sets, knitwear, baby & mama…",
+    "menu.label": "Menu",
+    "menu.fullshop": "Visit full shop →",
+
+    "hero.badge": "Free shipping over €50",
+    "hero.titleTemplate": "Made by a {0}, for yours.",
+    "hero.titleEmph": "family",
+    "hero.subtitle":
+      "Handmade details, natural fabrics and real, structured bows, never glued. Soft, sustainable clothing for little ones and the mamas who love them.",
+    "hero.cta1": "Shop the collection",
+    "hero.cta2": "Our story",
+    "hero.trust": "Loved by 5,000+ families",
+
+    "offer.deal": "Deal of the week",
+    "offer.ship": "Free shipping over €50 · ships in 1–2 days",
+    "cd.hrs": "hrs",
+    "cd.min": "min",
+    "cd.sec": "sec",
+    "cart.add": "Add to bag",
+    "cart.added": "Added ✓",
+
+    "shop.eyebrow": "The collection",
+    "shop.heading": "Little wardrobes, made to be lived in",
+    "shop.sizeguide": "Size guide",
+    "shop.viewall": "View all on shop →",
+    "filter.all": "All",
+    "cat.Dresses": "Dresses",
+    "cat.Sets": "Sets",
+    "cat.Knitwear": "Knitwear",
+    "cat.Baby": "Baby",
+    "cat.Maternity": "Maternity",
+    "cat.Pieces": "Pieces",
+
+    "pillars.eyebrow": "Our promise",
+    "pillars.headingTemplate": "Everything we do starts with {0}",
+    "pillars.headingEmph": "why",
+    "pillars.1t": "Careful design",
+    "pillars.1b":
+      "Everything we do starts with why. Every seam, every bow, every fabric is considered, never rushed.",
+    "pillars.2t": "Made with care",
+    "pillars.2b":
+      "We believe in building better and sustainable. Natural fabrics, small batches, and pieces made to be passed down, not thrown away.",
+    "pillars.3t": "A family with a goal",
+    "pillars.3b":
+      "Real people making great products. Madessa is made by a family, for yours, stitched by hand and wrapped with love.",
+
+    "newsletter.perk": "10% off your first order",
+    "newsletter.heading": "Join the family",
+    "newsletter.body":
+      "Sign up for 10% off your first order, early access to new drops, and the occasional note from our home to yours.",
+    "newsletter.placeholder": "you@email.com",
+    "newsletter.button": "Claim 10% off",
+    "newsletter.joining": "Joining…",
+    "newsletter.done": "Welcome to the family ✿ check your inbox for your code.",
+    "newsletter.fine": "No spam, just the good stuff. Unsubscribe anytime.",
+
+    "ig.eyebrow": "From the family album",
+    "ig.headingTemplate": "Follow along {0}",
+    "ig.cta": "See more on Instagram →",
+
+    "reviews.eyebrow": "Real people, real feedback",
+    "reviews.heading": "Loved by families everywhere",
+
+    "footer.explore": "Explore",
+    "footer.help": "Help",
+    "footer.stay": "Stay close",
+    "footer.fullshop": "Full shop",
+    "footer.offerTitle": "Free shipping over €50",
+    "footer.offerSub": "Ships worldwide · 1–2 days in NL",
+    "footer.rights": "Handmade with care.",
+    "footer.madeby": "Made by a family, for yours. ✿",
+  },
+
+  nl: {
+    "announce.1": "Gratis verzending bij bestellingen boven €50",
+    "announce.2": "10% korting op je eerste bestelling · sluit je hieronder aan",
+    "announce.3": "Handgemaakt in kleine oplages, wereldwijd verzonden",
+
+    "nav.shop": "Shop",
+    "nav.story": "Ons verhaal",
+    "nav.loved": "Geliefd door",
+    "nav.contact": "Contact",
+    "nav.about": "Over ons",
+    "nav.shipping": "Verzending & Retour",
+    "nav.faq": "Veelgestelde vragen",
+
+    "search.placeholder": "Zoek jurken, sets, gebreid, baby & mama…",
+    "menu.label": "Menu",
+    "menu.fullshop": "Bekijk de hele shop →",
+
+    "hero.badge": "Gratis verzending boven €50",
+    "hero.titleTemplate": "Gemaakt door een {0} voor de jouwe.",
+    "hero.titleEmph": "familie,",
+    "hero.subtitle":
+      "Handgemaakte details, natuurlijke stoffen en echte, stevige strikken, nooit gelijmd. Zachte, duurzame kleding voor de kleintjes en de mama's die van ze houden.",
+    "hero.cta1": "Bekijk de collectie",
+    "hero.cta2": "Ons verhaal",
+    "hero.trust": "Geliefd door 5.000+ gezinnen",
+
+    "offer.deal": "Deal van de week",
+    "offer.ship": "Gratis verzending boven €50 · verzonden in 1–2 dagen",
+    "cd.hrs": "uur",
+    "cd.min": "min",
+    "cd.sec": "sec",
+    "cart.add": "In de tas",
+    "cart.added": "Toegevoegd ✓",
+
+    "shop.eyebrow": "De collectie",
+    "shop.heading": "Kleine garderobes, gemaakt om in te leven",
+    "shop.sizeguide": "Maattabel",
+    "shop.viewall": "Bekijk alles →",
+    "filter.all": "Alle",
+    "cat.Dresses": "Jurken",
+    "cat.Sets": "Sets",
+    "cat.Knitwear": "Gebreid",
+    "cat.Baby": "Baby",
+    "cat.Maternity": "Zwangerschap",
+    "cat.Pieces": "Items",
+
+    "pillars.eyebrow": "Onze belofte",
+    "pillars.headingTemplate": "Alles wat we doen begint met {0}",
+    "pillars.headingEmph": "waarom",
+    "pillars.1t": "Zorgvuldig ontwerp",
+    "pillars.1b":
+      "Alles wat we doen begint met waarom. Elke naad, elke strik, elke stof is doordacht en nooit gehaast.",
+    "pillars.2t": "Met zorg gemaakt",
+    "pillars.2b":
+      "Wij geloven in beter en duurzamer. Natuurlijke stoffen, kleine oplages en kleding om door te geven, niet om weg te gooien.",
+    "pillars.3t": "Een familie met een doel",
+    "pillars.3b":
+      "Echte mensen die mooie producten maken. Madessa is gemaakt door een familie, voor de jouwe, met de hand genaaid en met liefde ingepakt.",
+
+    "newsletter.perk": "10% korting op je eerste bestelling",
+    "newsletter.heading": "Sluit je aan bij de familie",
+    "newsletter.body":
+      "Meld je aan voor 10% korting op je eerste bestelling, vroege toegang tot nieuwe drops en af en toe een berichtje van ons thuis naar dat van jou.",
+    "newsletter.placeholder": "jij@email.com",
+    "newsletter.button": "Claim 10% korting",
+    "newsletter.joining": "Bezig…",
+    "newsletter.done": "Welkom bij de familie ✿ check je inbox voor je code.",
+    "newsletter.fine": "Geen spam, alleen het goede. Altijd uitschrijven mogelijk.",
+
+    "ig.eyebrow": "Uit het familiealbum",
+    "ig.headingTemplate": "Volg ons {0}",
+    "ig.cta": "Meer op Instagram →",
+
+    "reviews.eyebrow": "Echte mensen, echte reacties",
+    "reviews.heading": "Geliefd bij gezinnen overal",
+
+    "footer.explore": "Ontdek",
+    "footer.help": "Hulp",
+    "footer.stay": "Blijf in de buurt",
+    "footer.fullshop": "Hele shop",
+    "footer.offerTitle": "Gratis verzending boven €50",
+    "footer.offerSub": "Wereldwijd verzonden · 1–2 dagen in NL",
+    "footer.rights": "Met de hand gemaakt.",
+    "footer.madeby": "Gemaakt door een familie, voor de jouwe. ✿",
+  },
+
+  tr: {
+    "announce.1": "€50 üzeri siparişlerde ücretsiz kargo",
+    "announce.2": "İlk siparişinde %10 indirim · aşağıdan aramıza katıl",
+    "announce.3": "Küçük partiler hâlinde el yapımı, dünya geneline kargo",
+
+    "nav.shop": "Mağaza",
+    "nav.story": "Hikayemiz",
+    "nav.loved": "Sevenler",
+    "nav.contact": "İletişim",
+    "nav.about": "Hakkımızda",
+    "nav.shipping": "Kargo & İade",
+    "nav.faq": "S.S.S.",
+
+    "search.placeholder": "Elbise, takım, triko, bebek & anne ara…",
+    "menu.label": "Menü",
+    "menu.fullshop": "Tüm mağazayı gör →",
+
+    "hero.badge": "€50 üzeri ücretsiz kargo",
+    "hero.titleTemplate": "Bir {0} tarafından, sizin için.",
+    "hero.titleEmph": "aile",
+    "hero.subtitle":
+      "El yapımı detaylar, doğal kumaşlar ve gerçek, sağlam fiyonklar, asla yapıştırılmaz. Küçükler ve onları seven anneler için yumuşak, sürdürülebilir giysiler.",
+    "hero.cta1": "Koleksiyonu keşfet",
+    "hero.cta2": "Hikayemiz",
+    "hero.trust": "5.000+ aile tarafından seviliyor",
+
+    "offer.deal": "Haftanın fırsatı",
+    "offer.ship": "€50 üzeri ücretsiz kargo · 1–2 günde kargoda",
+    "cd.hrs": "saat",
+    "cd.min": "dk",
+    "cd.sec": "sn",
+    "cart.add": "Sepete ekle",
+    "cart.added": "Eklendi ✓",
+
+    "shop.eyebrow": "Koleksiyon",
+    "shop.heading": "İçinde yaşanmak için yapılmış küçük gardıroplar",
+    "shop.sizeguide": "Beden tablosu",
+    "shop.viewall": "Tümünü gör →",
+    "filter.all": "Tümü",
+    "cat.Dresses": "Elbiseler",
+    "cat.Sets": "Takımlar",
+    "cat.Knitwear": "Triko",
+    "cat.Baby": "Bebek",
+    "cat.Maternity": "Hamile",
+    "cat.Pieces": "Parçalar",
+
+    "pillars.eyebrow": "Sözümüz",
+    "pillars.headingTemplate": "Yaptığımız her şey {0} ile başlar",
+    "pillars.headingEmph": "neden",
+    "pillars.1t": "Özenli tasarım",
+    "pillars.1b":
+      "Yaptığımız her şey nedenle başlar. Her dikiş, her fiyonk, her kumaş özenle seçilir, asla aceleye gelmez.",
+    "pillars.2t": "Özenle üretildi",
+    "pillars.2b":
+      "Daha iyi ve sürdürülebilir üretime inanıyoruz. Doğal kumaşlar, küçük partiler ve atılmak için değil, devredilmek için yapılmış parçalar.",
+    "pillars.3t": "Amacı olan bir aile",
+    "pillars.3b":
+      "Güzel ürünler yapan gerçek insanlar. Madessa bir aile tarafından, sizinkiler için elde dikilir ve sevgiyle paketlenir.",
+
+    "newsletter.perk": "İlk siparişinde %10 indirim",
+    "newsletter.heading": "Aramıza katıl",
+    "newsletter.body":
+      "İlk siparişinde %10 indirim, yeni ürünlere erken erişim ve ara sıra bizden sana küçük notlar için kaydol.",
+    "newsletter.placeholder": "sen@email.com",
+    "newsletter.button": "%10 indirimi al",
+    "newsletter.joining": "Katılıyor…",
+    "newsletter.done": "Aramıza hoş geldin ✿ kodun için gelen kutunu kontrol et.",
+    "newsletter.fine": "Spam yok, sadece güzel şeyler. İstediğin zaman çıkabilirsin.",
+
+    "ig.eyebrow": "Aile albümünden",
+    "ig.headingTemplate": "Bizi takip et {0}",
+    "ig.cta": "Instagram'da daha fazlası →",
+
+    "reviews.eyebrow": "Gerçek insanlar, gerçek yorumlar",
+    "reviews.heading": "Her yerde aileler tarafından seviliyor",
+
+    "footer.explore": "Keşfet",
+    "footer.help": "Yardım",
+    "footer.stay": "Bağlantıda kal",
+    "footer.fullshop": "Tüm mağaza",
+    "footer.offerTitle": "€50 üzeri ücretsiz kargo",
+    "footer.offerSub": "Dünya geneline kargo · NL'de 1–2 gün",
+    "footer.rights": "Özenle el yapımı.",
+    "footer.madeby": "Bir aile tarafından, sizin için. ✿",
+  },
+};

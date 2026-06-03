@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import Reveal from "./Reveal";
-import { site } from "@/data/site";
+import { useT } from "./i18n/LocaleContext";
 
 export default function Newsletter() {
+  const { t } = useT();
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
   const [sending, setSending] = useState(false);
@@ -32,15 +33,12 @@ export default function Newsletter() {
         <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 animate-blob bg-paper/15 blur-2xl" />
         <div className="relative mx-auto max-w-xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-paper/15 px-4 py-1.5 text-[0.7rem] uppercase tracking-[0.24em] backdrop-blur">
-            ✿ {site.offer.newsletterPerk}
+            ✿ {t("newsletter.perk")}
           </span>
           <h2 className="mt-5 font-display text-4xl leading-tight sm:text-5xl">
-            Join the family
+            {t("newsletter.heading")}
           </h2>
-          <p className="mt-3 text-paper/80">
-            Sign up for {site.offer.newsletterPerk.toLowerCase()}, early access to
-            new drops, and the occasional note from our home to yours.
-          </p>
+          <p className="mt-3 text-paper/80">{t("newsletter.body")}</p>
 
           {done ? (
             <motion.p
@@ -48,7 +46,7 @@ export default function Newsletter() {
               animate={{ opacity: 1, scale: 1 }}
               className="mt-8 font-display text-2xl"
             >
-              Welcome to the family ✿ check your inbox for your code.
+              {t("newsletter.done")}
             </motion.p>
           ) : (
             <form
@@ -60,7 +58,7 @@ export default function Newsletter() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@email.com"
+                placeholder={t("newsletter.placeholder")}
                 className="w-full rounded-full bg-paper px-6 py-3.5 text-ink outline-none ring-clay/0 transition-all placeholder:text-ink/40 focus:ring-4 focus:ring-paper/40"
               />
               <button
@@ -68,13 +66,11 @@ export default function Newsletter() {
                 disabled={sending}
                 className="shrink-0 rounded-full bg-ink px-7 py-3.5 text-sm tracking-wide text-paper transition-all duration-300 hover:bg-clay hover:scale-[1.03] disabled:opacity-70"
               >
-                {sending ? "Joining…" : "Claim 10% off"}
+                {sending ? t("newsletter.joining") : t("newsletter.button")}
               </button>
             </form>
           )}
-          <p className="mt-3 text-xs text-paper/50">
-            No spam, just the good stuff. Unsubscribe anytime.
-          </p>
+          <p className="mt-3 text-xs text-paper/50">{t("newsletter.fine")}</p>
         </div>
       </Reveal>
     </section>

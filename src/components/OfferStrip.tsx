@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
 import AddToCartButton from "./cart/AddToCartButton";
 import { useCatalog } from "@/components/catalog/CatalogContext";
+import { useT } from "@/components/i18n/LocaleContext";
 
 // A gentle, ever-present urgency window (resets every 24h), no fake dates baked in.
 function useCountdown() {
@@ -31,7 +32,8 @@ function useCountdown() {
 const pad = (n: number) => String(n).padStart(2, "0");
 
 export default function OfferStrip() {
-  const t = useCountdown();
+  const cd = useCountdown();
+  const { t } = useT();
   const { deal: muse } = useCatalog();
   const off = muse.compareAt
     ? Math.round((1 - muse.price / muse.compareAt) * 100)
@@ -55,8 +57,8 @@ export default function OfferStrip() {
             </div>
 
             <div className="p-8 sm:p-12">
-              <span className="inline-flex items-center gap-2 rounded-full bg-clay px-4 py-1.5 text-[0.7rem] uppercase tracking-[0.24em]">
-                Deal of the week{off > 0 ? ` · −${off}%` : ""}
+              <span className="inline-flex items-center gap-2 rounded-full bg-clay px-4 py-1.5 text-[0.7rem] uppercase tracking-[0.24em] text-ink">
+                {t("offer.deal")}{off > 0 ? ` · −${off}%` : ""}
               </span>
               <h2 className="mt-5 font-display text-4xl leading-tight sm:text-5xl">
                 The {muse.title}
@@ -74,9 +76,9 @@ export default function OfferStrip() {
 
               <div className="mt-6 flex items-center gap-2">
                 {[
-                  { v: t.h, l: "hrs" },
-                  { v: t.m, l: "min" },
-                  { v: t.s, l: "sec" },
+                  { v: cd.h, l: t("cd.hrs") },
+                  { v: cd.m, l: t("cd.min") },
+                  { v: cd.s, l: t("cd.sec") },
                 ].map((b, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <span className="grid h-14 w-14 place-items-center rounded-xl bg-paper/10 font-display text-2xl tabular-nums backdrop-blur">
@@ -91,13 +93,10 @@ export default function OfferStrip() {
 
               <AddToCartButton
                 slug={muse.slug}
-                label={`Add to bag · €${muse.price}`}
-                added="Added to bag ✓"
+                label={`${t("cart.add")} · €${muse.price}`}
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-paper px-7 py-3.5 text-sm tracking-wide text-ink transition-all duration-300 hover:bg-clay hover:text-paper"
               />
-              <p className="mt-3 text-xs text-paper/50">
-                ✿ Free shipping over €50 · ships in 1-2 days
-              </p>
+              <p className="mt-3 text-xs text-paper/50">✿ {t("offer.ship")}</p>
             </div>
           </div>
         </div>

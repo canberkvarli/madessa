@@ -39,17 +39,18 @@ export const site = {
     "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/9AE826E0-F7F1-4638-9319-5749E2460641.png?v=1778184439&width=3840",
 };
 
+// `key` resolves to a translation in i18n.ts; `label` is the English fallback.
 export const nav = [
-  { label: "Shop", href: "/#shop" },
-  { label: "Our Story", href: "/#story" },
-  { label: "Loved by", href: "/#reviews" },
-  { label: "Contact", href: "/contact" },
+  { key: "nav.shop", label: "Shop", href: "/#shop" },
+  { key: "nav.story", label: "Our Story", href: "/#story" },
+  { key: "nav.loved", label: "Loved by", href: "/#reviews" },
+  { key: "nav.contact", label: "Contact", href: "/contact" },
 ];
 
 // Secondary links used in the footer.
 export const helpNav = [
-  { label: "About", href: "/about" },
-  { label: "Shipping & Returns", href: "/shipping" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+  { key: "nav.about", label: "About", href: "/about" },
+  { key: "nav.shipping", label: "Shipping & Returns", href: "/shipping" },
+  { key: "nav.faq", label: "FAQ", href: "/faq" },
+  { key: "nav.contact", label: "Contact", href: "/contact" },
 ];

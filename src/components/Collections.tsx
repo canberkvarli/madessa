@@ -7,8 +7,10 @@ import ProductCard from "./ProductCard";
 import { type Product } from "@/data/products";
 import { site } from "@/data/site";
 import { useCatalog } from "@/components/catalog/CatalogContext";
+import { useT } from "@/components/i18n/LocaleContext";
 
 export default function Collections() {
+  const { t } = useT();
   const { products, categories } = useCatalog();
   const filters = ["All", ...categories];
   const [active, setActive] = useState<string>("All");
@@ -21,10 +23,10 @@ export default function Collections() {
         <Reveal className="flex flex-col items-end justify-between gap-6 sm:flex-row">
           <div>
             <p className="text-[0.7rem] uppercase tracking-[0.3em] text-clay">
-              The collection
+              {t("shop.eyebrow")}
             </p>
             <h2 className="mt-3 max-w-xl font-display text-4xl leading-tight sm:text-5xl">
-              Little wardrobes, made to be lived in
+              {t("shop.heading")}
             </h2>
           </div>
           <div className="flex shrink-0 items-center gap-5 text-sm tracking-wide">
@@ -32,7 +34,7 @@ export default function Collections() {
               onClick={() => window.dispatchEvent(new Event("madessa:open-sizeguide"))}
               className="underline-offset-4 hover:text-clay hover:underline"
             >
-              Size guide
+              {t("shop.sizeguide")}
             </button>
             <a
               href={site.shopUrl}
@@ -40,7 +42,7 @@ export default function Collections() {
               rel="noopener"
               className="underline-offset-4 hover:text-clay hover:underline"
             >
-              View all on shop →
+              {t("shop.viewall")}
             </a>
           </div>
         </Reveal>
@@ -56,7 +58,7 @@ export default function Collections() {
                   : "border-ink/15 text-ink-soft hover:border-ink/40"
               }`}
             >
-              {f}
+              {f === "All" ? t("filter.all") : t(`cat.${f}`)}
             </button>
           ))}
         </Reveal>

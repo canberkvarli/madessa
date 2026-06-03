@@ -4,8 +4,10 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Reveal from "./Reveal";
 import { reviews, stats } from "@/data/reviews";
+import { useT } from "./i18n/LocaleContext";
 
 export default function Reviews() {
+  const { t } = useT();
   const [i, setI] = useState(0);
   const go = (dir: number) =>
     setI((prev) => (prev + dir + reviews.length) % reviews.length);
@@ -17,10 +19,10 @@ export default function Reviews() {
       <div className="mx-auto max-w-4xl text-center">
         <Reveal>
           <p className="text-[0.7rem] uppercase tracking-[0.3em] text-clay">
-            Real people, real feedback
+            {t("reviews.eyebrow")}
           </p>
           <h2 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
-            Loved by families everywhere
+            {t("reviews.heading")}
           </h2>
         </Reveal>
 

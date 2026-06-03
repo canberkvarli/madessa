@@ -5,8 +5,11 @@ import { AnimatePresence, motion } from "motion/react";
 import { nav, site } from "@/data/site";
 import CartButton from "./cart/CartButton";
 import WishlistButton from "./wishlist/WishlistButton";
+import LanguageSwitch from "./i18n/LanguageSwitch";
+import { useT } from "./i18n/LocaleContext";
 
 export default function Header() {
+  const { t } = useT();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -45,7 +48,7 @@ export default function Header() {
               <circle cx="11" cy="11" r="7" />
               <path d="m20 20-3.2-3.2" strokeLinecap="round" />
             </svg>
-            <span className="flex-1 text-left">Search dresses, sets, knitwear, baby &amp; mama…</span>
+            <span className="flex-1 text-left">{t("search.placeholder")}</span>
             <span className="text-ink/30 transition-transform duration-300 group-hover:translate-x-0.5">→</span>
           </button>
         </div>
@@ -79,6 +82,9 @@ export default function Header() {
 
       {/* slim nav sub-row (desktop) */}
       <div className="relative hidden border-t border-ink/5 md:block">
+        <div className="absolute left-6 top-1/2 hidden -translate-y-1/2 lg:left-10 lg:block">
+          <LanguageSwitch />
+        </div>
         <div className="flex items-center justify-center gap-9 px-6 py-2.5 lg:px-10">
           {nav.map((item) => (
             <a
@@ -86,7 +92,7 @@ export default function Header() {
               href={item.href}
               className="relative text-[0.78rem] uppercase tracking-[0.18em] text-ink/70 transition-colors hover:text-clay"
             >
-              {item.label}
+              {t(item.key)}
             </a>
           ))}
         </div>
@@ -118,7 +124,7 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                   className="group flex items-center justify-between border-b border-ink/5 py-3 font-display text-3xl transition-colors hover:text-clay"
                 >
-                  {item.label}
+                  {t(item.key)}
                   <span className="text-base text-ink/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-clay">
                     0{i + 1}
                   </span>
@@ -139,8 +145,11 @@ export default function Header() {
                   rel="noopener"
                   className="rounded-full bg-ink px-6 py-3 text-sm tracking-wide text-paper transition-colors hover:bg-clay"
                 >
-                  Visit full shop →
+                  {t("menu.fullshop")}
                 </a>
+              </div>
+              <div className="mt-6">
+                <LanguageSwitch />
               </div>
             </div>
           </motion.div>

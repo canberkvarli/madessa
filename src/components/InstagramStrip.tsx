@@ -4,9 +4,12 @@ import Image from "next/image";
 import Reveal from "./Reveal";
 import { site } from "@/data/site";
 import { useCatalog } from "@/components/catalog/CatalogContext";
+import { useT } from "@/components/i18n/LocaleContext";
 
 export default function InstagramStrip() {
   const { products } = useCatalog();
+  const { t } = useT();
+  const [igPre, igPost] = t("ig.headingTemplate").split("{0}");
   // Uses stable product imagery as the social grid (IG CDN links expire).
   const grid = products.slice(0, 6);
   return (
@@ -15,10 +18,12 @@ export default function InstagramStrip() {
         <Reveal className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-[0.7rem] uppercase tracking-[0.3em] text-clay">
-              From the family album
+              {t("ig.eyebrow")}
             </p>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl">
-              Follow along {site.socials.instagramHandle}
+              {igPre}
+              {site.socials.instagramHandle}
+              {igPost}
             </h2>
           </div>
           <a
@@ -27,7 +32,7 @@ export default function InstagramStrip() {
             rel="noopener"
             className="text-sm tracking-wide underline-offset-4 hover:text-clay hover:underline"
           >
-            See more on Instagram →
+            {t("ig.cta")}
           </a>
         </Reveal>
 

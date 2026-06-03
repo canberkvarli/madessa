@@ -7,6 +7,7 @@ import { WishlistProvider } from "@/components/wishlist/WishlistContext";
 import WishlistDrawer from "@/components/wishlist/WishlistDrawer";
 import SearchCommand from "@/components/SearchCommand";
 import SizeGuide from "@/components/SizeGuide";
+import { LocaleProvider } from "@/components/i18n/LocaleContext";
 import type { Product } from "@/data/products";
 
 export default function Providers({
@@ -23,21 +24,23 @@ export default function Providers({
   children: React.ReactNode;
 }) {
   return (
-    <CatalogProvider
-      products={products}
-      categories={categories}
-      deal={deal}
-      live={live}
-    >
-      <CartProvider>
-        <WishlistProvider>
-          {children}
-          <CartDrawer />
-          <WishlistDrawer />
-          <SearchCommand />
-          <SizeGuide />
-        </WishlistProvider>
-      </CartProvider>
-    </CatalogProvider>
+    <LocaleProvider>
+      <CatalogProvider
+        products={products}
+        categories={categories}
+        deal={deal}
+        live={live}
+      >
+        <CartProvider>
+          <WishlistProvider>
+            {children}
+            <CartDrawer />
+            <WishlistDrawer />
+            <SearchCommand />
+            <SizeGuide />
+          </WishlistProvider>
+        </CartProvider>
+      </CatalogProvider>
+    </LocaleProvider>
   );
 }

@@ -4,11 +4,14 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { site } from "@/data/site";
 import { useCatalog } from "@/components/catalog/CatalogContext";
+import { useT } from "@/components/i18n/LocaleContext";
 
 export default function Hero() {
   const reduce = useReducedMotion();
   const ease = [0.16, 1, 0.3, 1] as const;
+  const { t } = useT();
   const { deal, products } = useCatalog();
+  const [titlePre, titlePost] = t("hero.titleTemplate").split("{0}");
   const featured = deal; // best current deal
   const faces = [site.heroImage, featured.image, products[1]?.image].filter(
     Boolean,
@@ -32,20 +35,18 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-paper/60 px-4 py-1.5 text-[0.7rem] uppercase tracking-[0.28em] text-ink-soft backdrop-blur"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-clay" />
-            {site.offer.heroBadge}
+            {t("hero.badge")}
           </motion.span>
 
           <motion.h1
             initial={reduce ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.08, ease }}
-            className="mt-6 font-display text-[3.1rem] leading-[0.95] tracking-[-0.02em] sm:text-7xl lg:text-[5.3rem]"
+            className="mt-6 font-display text-[3.1rem] leading-[0.98] tracking-[-0.02em] sm:text-7xl lg:text-[5rem]"
           >
-            Made by a
-            <br />
-            <span className="italic text-clay">family</span>, for
-            <br />
-            yours.
+            {titlePre}
+            <span className="italic text-clay">{t("hero.titleEmph")}</span>
+            {titlePost}
           </motion.h1>
 
           <motion.p
@@ -54,9 +55,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease }}
             className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft"
           >
-            Handmade details, natural fabrics and real, structured bows, never
-            glued. Soft, sustainable clothing for little ones and the mamas who
-            love them.
+            {t("hero.subtitle")}
           </motion.p>
 
           <motion.div
@@ -69,7 +68,7 @@ export default function Hero() {
               href="#shop"
               className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm tracking-wide text-paper transition-all duration-300 hover:bg-clay hover:scale-[1.03]"
             >
-              Shop the collection
+              {t("hero.cta1")}
               <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                 →
               </span>
@@ -78,7 +77,7 @@ export default function Hero() {
               href="#story"
               className="inline-flex items-center gap-2 text-sm tracking-wide text-ink underline-offset-4 hover:underline"
             >
-              Our story
+              {t("hero.cta2")}
             </a>
           </motion.div>
 
@@ -98,7 +97,7 @@ export default function Hero() {
             </div>
             <div>
               <span className="text-clay">★★★★★</span>
-              <p className="text-xs">Loved by 5,000+ families</p>
+              <p className="text-xs">{t("hero.trust")}</p>
             </div>
           </motion.div>
         </div>

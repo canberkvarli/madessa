@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useCart } from "./CartContext";
+import { useT } from "@/components/i18n/LocaleContext";
 
 type Props = {
   slug: string;
@@ -13,11 +14,14 @@ type Props = {
 export default function AddToCartButton({
   slug,
   className = "",
-  label = "Add to bag",
-  added = "Added ✓",
+  label,
+  added,
 }: Props) {
   const { add } = useCart();
+  const { t } = useT();
   const [justAdded, setJustAdded] = useState(false);
+  const labelText = label ?? t("cart.add");
+  const addedText = added ?? t("cart.added");
 
   return (
     <button
@@ -31,7 +35,7 @@ export default function AddToCartButton({
       }}
       className={className}
     >
-      {justAdded ? added : label}
+      {justAdded ? addedText : labelText}
     </button>
   );
 }

@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
+/* ───────────────────────────────────────────────────────────
+   Madessa — warm, organic, editorial design system
+   Palette: cream paper, oat, sand, clay terracotta, sage, warm ink
+   Type: Fraunces (display serif) + Hanken Grotesk (body)
+   ─────────────────────────────────────────────────────────── */
+
+@theme {
+  --color-paper: #fbf6ee;
+  --color-cream: #f5ece0;
+  --color-oat: #efe3d2;
+  --color-sand: #e3d3ba;
+  --color-clay: #bd7e54;
+  --color-clay-deep: #a3673f;
+  --color-sage: #8d9b7e;
+  --color-sage-deep: #6f7d61;
+  --color-blush: #e7c8bb;
+  --color-ink: #2c2622;
+  --color-ink-soft: #5a4f45;
+
+  --font-display: var(--font-display), "Georgia", serif;
+  --font-body: var(--font-body), system-ui, sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  border-color: color-mix(in oklab, var(--color-ink) 12%, transparent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--color-clay); color: var(--color-paper); }
+
+/* Paper grain overlay — subtle organic texture across the whole page */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.font-display { font-family: var(--font-display); font-optical-sizing: auto; }
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(to right, transparent, color-mix(in oklab, var(--color-ink) 22%, transparent), transparent);
+}
+
+/* ── Animations ── */
+@keyframes marquee { to { transform: translateX(-50%); } }
+.animate-marquee { animation: marquee 30s linear infinite; }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+.animate-float { animation: float-slow 9s ease-in-out infinite; }
+
+@keyframes blob-morph {
+  0%, 100% { border-radius: 42% 58% 56% 44% / 48% 42% 58% 52%; }
+  50% { border-radius: 58% 42% 44% 56% / 52% 58% 42% 48%; }
+}
+.animate-blob { animation: blob-morph 14s ease-in-out infinite; }
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin-slow 26s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

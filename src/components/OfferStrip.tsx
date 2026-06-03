@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
-import { products, productUrl } from "@/data/products";
+import { products } from "@/data/products";
+import AddToCartButton from "./cart/AddToCartButton";
 
 const muse = products[0];
 
@@ -89,15 +90,12 @@ export default function OfferStrip() {
                 ))}
               </div>
 
-              <a
-                href={productUrl(muse.slug)}
-                target="_blank"
-                rel="noopener"
+              <AddToCartButton
+                slug={muse.slug}
+                label={`Add to bag · €${muse.price}`}
+                added="Added to bag ✓"
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-paper px-7 py-3.5 text-sm tracking-wide text-ink transition-all duration-300 hover:bg-clay hover:text-paper"
-              >
-                Grab the deal
-                <span aria-hidden>→</span>
-              </a>
+              />
               <p className="mt-3 text-xs text-paper/50">
                 ✿ Free shipping over €50 · ships in 1-2 days
               </p>

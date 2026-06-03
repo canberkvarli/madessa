@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { nav, site } from "@/data/site";
+import CartButton from "./cart/CartButton";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -78,6 +79,7 @@ export default function Header() {
             Shop now
             <span aria-hidden>→</span>
           </a>
+          <CartButton />
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"

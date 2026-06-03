@@ -31,6 +31,7 @@ export const site = {
     ],
     heroBadge: "Free shipping over €50",
     newsletterPerk: "10% off your first order",
+    freeShipThreshold: 50,
   },
 
   // Hero image: the real 3840px Madessa banner, art-directed so it is never cropped wrong on desktop.

@@ -2,7 +2,7 @@
 // Edit here to change what appears on the site; "Shop" links go to the live Shopify product page.
 export type Product = {
   slug: string; title: string; category: string;
-  price: number; compareAt: number | null; image: string; blurb: string;
+  price: number; compareAt: number | null; image: string; blurb: string; variantId: string;
 };
 
 export const productUrl = (slug: string) => `https://madessa.co/products/${slug}`;
@@ -10,6 +10,7 @@ export const productUrl = (slug: string) => `https://madessa.co/products/${slug}
 export const products: Product[] = [
   {
     "slug": "the-little-muse-dress-cotton-tulle",
+    "variantId": "55772200534390",
     "title": "Little Muse Dress",
     "category": "Dresses",
     "price": 48,
@@ -19,6 +20,7 @@ export const products: Product[] = [
   },
   {
     "slug": "little-lounge-set-1",
+    "variantId": "55772251226486",
     "title": "Little Lounge Set",
     "category": "Sets",
     "price": 54,
@@ -28,6 +30,7 @@ export const products: Product[] = [
   },
   {
     "slug": "playdate-set",
+    "variantId": "55772217213302",
     "title": "Playdate Set",
     "category": "Sets",
     "price": 66,
@@ -37,6 +40,7 @@ export const products: Product[] = [
   },
   {
     "slug": "mini-explorer-jumpsuit",
+    "variantId": "55745151861110",
     "title": "Mini Explorer Jumpsuit",
     "category": "Baby",
     "price": 72,
@@ -46,6 +50,7 @@ export const products: Product[] = [
   },
   {
     "slug": "little-gentle-set",
+    "variantId": "55809083441526",
     "title": "Little Gentle Set",
     "category": "Sets",
     "price": 83,
@@ -55,6 +60,7 @@ export const products: Product[] = [
   },
   {
     "slug": "little-stripe-dress",
+    "variantId": "55809084031350",
     "title": "Little Stripe Dress",
     "category": "Dresses",
     "price": 72,
@@ -64,6 +70,7 @@ export const products: Product[] = [
   },
   {
     "slug": "argyle-knit-sweater",
+    "variantId": "56374593749366",
     "title": "Argyle Knit Sweater",
     "category": "Knitwear",
     "price": 54,
@@ -73,6 +80,7 @@ export const products: Product[] = [
   },
   {
     "slug": "baby-white-shirt",
+    "variantId": "55867932574070",
     "title": "Baby White Shirt",
     "category": "Baby",
     "price": 19,
@@ -82,6 +90,7 @@ export const products: Product[] = [
   },
   {
     "slug": "brown-cotton-pants-set",
+    "variantId": "56475077443958",
     "title": "Brown Cotton Pants Set",
     "category": "Sets",
     "price": 72,
@@ -91,6 +100,7 @@ export const products: Product[] = [
   },
   {
     "slug": "cloud-knit-sweater",
+    "variantId": "56375216439670",
     "title": "Cloud Knit Sweater",
     "category": "Knitwear",
     "price": 48,

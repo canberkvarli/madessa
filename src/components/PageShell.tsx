@@ -18,7 +18,7 @@ export default function PageShell({
     <>
       <AnnouncementBar />
       <Header />
-      <main>
+      <main id="main">
         <section className="relative overflow-hidden px-6 pb-10 pt-14 lg:px-10 lg:pt-20">
           <div className="pointer-events-none absolute -top-24 right-0 -z-10 h-80 w-80 rounded-full bg-blush/40 blur-3xl" />
           <Reveal className="mx-auto max-w-3xl text-center">

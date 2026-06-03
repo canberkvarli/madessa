@@ -3,6 +3,7 @@ import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/cart/Providers";
 import { getCatalog } from "@/lib/shopify";
+import { Analytics } from "@vercel/analytics/next";
 
 const fraunces = Fraunces({
   variable: "--font-display",
@@ -44,6 +45,12 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${fraunces.variable} ${hanken.variable} antialiased`}>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-ink focus:px-5 focus:py-2.5 focus:text-sm focus:text-paper"
+        >
+          Skip to content
+        </a>
         <Providers
           products={products}
           categories={categories}
@@ -52,6 +59,7 @@ export default async function RootLayout({
         >
           {children}
         </Providers>
+        <Analytics />
       </body>
     </html>
   );

@@ -27,14 +27,22 @@ export default function Collections() {
               Little wardrobes, made to be lived in
             </h2>
           </div>
-          <a
-            href={site.shopUrl}
-            target="_blank"
-            rel="noopener"
-            className="shrink-0 text-sm tracking-wide underline-offset-4 hover:text-clay hover:underline"
-          >
-            View all on shop →
-          </a>
+          <div className="flex shrink-0 items-center gap-5 text-sm tracking-wide">
+            <button
+              onClick={() => window.dispatchEvent(new Event("madessa:open-sizeguide"))}
+              className="underline-offset-4 hover:text-clay hover:underline"
+            >
+              Size guide
+            </button>
+            <a
+              href={site.shopUrl}
+              target="_blank"
+              rel="noopener"
+              className="underline-offset-4 hover:text-clay hover:underline"
+            >
+              View all on shop →
+            </a>
+          </div>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-8 flex flex-wrap gap-2">

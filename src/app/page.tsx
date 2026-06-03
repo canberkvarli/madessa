@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <AnnouncementBar />
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <OfferStrip />
         <Collections />

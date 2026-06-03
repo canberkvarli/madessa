@@ -3,7 +3,10 @@
 import { CartProvider } from "./CartContext";
 import CartDrawer from "./CartDrawer";
 import { CatalogProvider } from "@/components/catalog/CatalogContext";
+import { WishlistProvider } from "@/components/wishlist/WishlistContext";
+import WishlistDrawer from "@/components/wishlist/WishlistDrawer";
 import SearchCommand from "@/components/SearchCommand";
+import SizeGuide from "@/components/SizeGuide";
 import type { Product } from "@/data/products";
 
 export default function Providers({
@@ -27,9 +30,13 @@ export default function Providers({
       live={live}
     >
       <CartProvider>
-        {children}
-        <CartDrawer />
-        <SearchCommand />
+        <WishlistProvider>
+          {children}
+          <CartDrawer />
+          <WishlistDrawer />
+          <SearchCommand />
+          <SizeGuide />
+        </WishlistProvider>
       </CartProvider>
     </CatalogProvider>
   );

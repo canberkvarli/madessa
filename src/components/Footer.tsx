@@ -103,7 +103,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-paper/10 pt-6 text-xs text-paper/40 sm:flex-row">
+        <div className="mt-14 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 border-t border-paper/10 pt-6 text-xs text-paper/50">
+          {[
+            { label: "Privacy", href: "/privacy" },
+            { label: "Terms", href: "/terms" },
+            { label: "Returns & Refunds", href: "/returns" },
+            { label: "Shipping", href: "/shipping" },
+          ].map((l) => (
+            <a key={l.href} href={l.href} className="transition-colors hover:text-clay">
+              {l.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-4 flex flex-col items-center justify-between gap-3 text-xs text-paper/40 sm:flex-row">
           <p>© {new Date().getFullYear()} Madessa. Handmade with care.</p>
           <p>Made by a family, for yours. ✿</p>
         </div>

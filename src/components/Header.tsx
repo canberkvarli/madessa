@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { nav, site } from "@/data/site";
 import CartButton from "./cart/CartButton";
+import WishlistButton from "./wishlist/WishlistButton";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -61,6 +62,7 @@ export default function Header() {
               <path d="m20 20-3.2-3.2" strokeLinecap="round" />
             </svg>
           </button>
+          <WishlistButton />
           <CartButton />
           <button
             onClick={() => setOpen((v) => !v)}

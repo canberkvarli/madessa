@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { type Product, productUrl } from "@/data/products";
 import AddToCartButton from "./cart/AddToCartButton";
+import HeartButton from "./wishlist/HeartButton";
 
 export default function ProductCard({ product }: { product: Product }) {
   const onSale = product.compareAt != null;
@@ -27,10 +28,13 @@ export default function ProductCard({ product }: { product: Product }) {
           />
         </a>
         {onSale && (
-          <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-clay px-3 py-1 text-[0.65rem] font-medium uppercase tracking-wider text-paper">
+          <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-clay px-3 py-1 text-[0.65rem] font-medium uppercase tracking-wider text-ink">
             −{off}%
           </span>
         )}
+        <div className="absolute right-3 top-3">
+          <HeartButton slug={product.slug} />
+        </div>
         <AddToCartButton
           slug={product.slug}
           className="absolute inset-x-3 bottom-3 translate-y-3 rounded-full bg-paper/95 py-2.5 text-center text-xs font-medium uppercase tracking-[0.2em] text-ink opacity-0 backdrop-blur transition-all duration-300 ease-out hover:bg-ink hover:text-paper group-hover:translate-y-0 group-hover:opacity-100"

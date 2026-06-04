@@ -10,6 +10,8 @@ import SearchCommand from "@/components/SearchCommand";
 import SizeGuide from "@/components/SizeGuide";
 import QuickView from "@/components/QuickView";
 import NewsletterPopup from "@/components/NewsletterPopup";
+import ScrollProgress from "@/components/ScrollProgress";
+import BackToTop from "@/components/BackToTop";
 import { LocaleProvider } from "@/components/i18n/LocaleContext";
 import type { Product } from "@/data/products";
 
@@ -44,6 +46,8 @@ export default function Providers({
             <QuickView />
             <NewsletterPopup />
             <FlyToBag />
+            <ScrollProgress />
+            <BackToTop />
           </WishlistProvider>
         </CartProvider>
       </CatalogProvider>

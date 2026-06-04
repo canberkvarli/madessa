@@ -9,7 +9,7 @@ import { useT } from "@/components/i18n/LocaleContext";
 import { useWishlist } from "@/components/wishlist/WishlistContext";
 
 export default function QuickView() {
-  const { bySlug } = useCatalog();
+  const { bySlug, products } = useCatalog();
   const { add } = useCart();
   const { has, toggle } = useWishlist();
   const { t } = useT();
@@ -37,6 +37,15 @@ export default function QuickView() {
   const product = slug ? bySlug.get(slug) : null;
   const images = product ? product.images?.length ? product.images : [product.image] : [];
   const onSale = product?.compareAt != null;
+  const related = product
+    ? (() => {
+        const sameCat = products.filter(
+          (p) => p.slug !== product.slug && p.category === product.category,
+        );
+        const pool = sameCat.length >= 3 ? sameCat : products.filter((p) => p.slug !== product.slug);
+        return pool.slice(0, 3);
+      })()
+    : [];
 
   return (
     <AnimatePresence>
@@ -143,6 +152,32 @@ export default function QuickView() {
                   </button>
                 </div>
               </div>
+
+              {related.length > 0 && (
+                <div className="mt-6 border-t border-ink/10 pt-5">
+                  <p className="text-[0.7rem] uppercase tracking-[0.2em] text-ink-soft">
+                    {t("qv.related")}
+                  </p>
+                  <div className="mt-3 flex gap-3">
+                    {related.map((r) => (
+                      <button
+                        key={r.slug}
+                        onClick={() => {
+                          setSlug(r.slug);
+                          setActive(0);
+                        }}
+                        className="group flex-1 text-left"
+                        aria-label={r.title}
+                      >
+                        <div className="relative aspect-square overflow-hidden rounded-lg bg-cream">
+                          <Image src={r.image} alt={r.title} fill sizes="90px" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                        </div>
+                        <p className="mt-1 truncate text-[0.7rem]">€{r.price}</p>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
         </motion.div>

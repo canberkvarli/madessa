@@ -6,20 +6,15 @@ export const site = {
   tagline: "Handmade details. Natural fabrics. Made by a family, for yours.",
   shopUrl: "https://madessa.co",
 
-  //  Issue #3: contact info shown in the header & footer.
-  // TODO(Yaren): confirm the public email / phone. Placeholders below are safe to launch.
+  // Real contact info from madessa.co. (No public phone yet — add one here when ready.)
   contact: {
     email: "hello@madessa.co",
-    phone: "+31 6 12 34 56 78",
-    phoneHref: "tel:+31612345678",
-    whatsapp: "https://wa.me/31612345678",
     location: "Made with love in the Netherlands",
   },
 
   socials: {
-    instagram: "https://instagram.com/madessa",
-    instagramHandle: "@madessa",
-    tiktok: "https://www.tiktok.com/@madessa",
+    instagram: "https://instagram.com/madessaco",
+    instagramHandle: "@madessaco",
   },
 
   //  Issue #4: the attract-customers offer. Free shipping is real (Shopify policy: >€50).
@@ -50,10 +45,14 @@ export const gallery = [
   `${G}MD_0303.jpg?width=900`,
   `${G}MD_2267.jpg?width=900`,
   `${G}MD_2266.jpg?width=900`,
+  `${G}MD_0402_de16e372-a847-4b47-9960-652e02e31775.jpg?width=900`,
   `${G}MD_2122.jpg?width=900`,
   `${G}MD_2153.jpg?width=900`,
+  `${G}MD_0329_38343a45-63f8-48d7-b5b9-895df2ec22dc.jpg?width=900`,
   `${G}MD_2067.jpg?width=900`,
   `${G}MD_2084_copy.jpg?width=900`,
+  `${G}MD_0878.jpg?width=900`,
+  `${G}FullSizeRender_b60c3b0c-68e9-4532-8d0d-da6b6bf94a86.jpg?width=900`,
 ];
 
 // `key` resolves to a translation in i18n.ts; `label` is the English fallback.

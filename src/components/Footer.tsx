@@ -26,11 +26,8 @@ export default function Footer() {
               <a href={`mailto:${site.contact.email}`} className="flex items-center gap-3 text-paper/80 transition-colors hover:text-clay">
                 <span className="text-clay">✉</span> {site.contact.email}
               </a>
-              <a href={site.contact.phoneHref} className="flex items-center gap-3 text-paper/80 transition-colors hover:text-clay">
-                <span className="text-clay">☎</span> {site.contact.phone}
-              </a>
-              <a href={site.contact.whatsapp} target="_blank" rel="noopener" className="flex items-center gap-3 text-paper/80 transition-colors hover:text-clay">
-                <span className="text-clay">✺</span> WhatsApp
+              <a href={site.socials.instagram} target="_blank" rel="noopener" className="flex items-center gap-3 text-paper/80 transition-colors hover:text-clay">
+                <span className="text-clay">✦</span> Instagram {site.socials.instagramHandle}
               </a>
               <p className="flex items-center gap-3 text-paper/60">
                 <span className="text-clay">✿</span> {site.contact.location}
@@ -77,8 +74,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={site.socials.tiktok} target="_blank" rel="noopener" className="text-paper/80 transition-colors hover:text-clay">
-                  TikTok
+                <a href={`mailto:${site.contact.email}`} className="text-paper/80 transition-colors hover:text-clay">
+                  {site.contact.email}
                 </a>
               </li>
             </ul>

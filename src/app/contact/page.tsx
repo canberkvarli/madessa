@@ -26,12 +26,6 @@ export default function ContactPage() {
             </a>
           </div>
           <div>
-            <p className="text-[0.7rem] uppercase tracking-[0.24em] text-clay">Phone</p>
-            <a href={site.contact.phoneHref} className="mt-1 block font-display text-xl hover:text-clay">
-              {site.contact.phone}
-            </a>
-          </div>
-          <div>
             <p className="text-[0.7rem] uppercase tracking-[0.24em] text-clay">Instagram</p>
             <a href={site.socials.instagram} target="_blank" rel="noopener" className="mt-1 block font-display text-xl hover:text-clay">
               {site.socials.instagramHandle}

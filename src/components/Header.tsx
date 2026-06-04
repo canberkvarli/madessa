@@ -97,12 +97,12 @@ export default function Header() {
           ))}
         </div>
         <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 items-center gap-4 text-[0.72rem] text-ink-soft lg:right-10 lg:flex">
-          <a href={`mailto:${site.contact.email}`} className="transition-colors hover:text-clay">
-            {site.contact.email}
+          <a href={site.socials.instagram} target="_blank" rel="noopener" className="transition-colors hover:text-clay">
+            {site.socials.instagramHandle}
           </a>
           <span className="text-ink/20">·</span>
-          <a href={site.contact.phoneHref} className="transition-colors hover:text-clay">
-            {site.contact.phone}
+          <a href={`mailto:${site.contact.email}`} className="transition-colors hover:text-clay">
+            {site.contact.email}
           </a>
         </div>
       </div>
@@ -135,8 +135,8 @@ export default function Header() {
                   <a href={`mailto:${site.contact.email}`} className="hover:text-clay">
                     {site.contact.email}
                   </a>
-                  <a href={site.contact.phoneHref} className="hover:text-clay">
-                    {site.contact.phone}
+                  <a href={site.socials.instagram} target="_blank" rel="noopener" className="hover:text-clay">
+                    {site.socials.instagramHandle}
                   </a>
                 </div>
                 <a

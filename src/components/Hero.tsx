@@ -10,12 +10,9 @@ export default function Hero() {
   const reduce = useReducedMotion();
   const ease = [0.16, 1, 0.3, 1] as const;
   const { t } = useT();
-  const { deal, products } = useCatalog();
+  const { deal } = useCatalog();
   const [titlePre, titlePost] = t("hero.titleTemplate").split("{0}");
   const featured = deal; // best current deal
-  const faces = [site.heroImage, featured.image, products[1]?.image].filter(
-    Boolean,
-  ) as string[];
 
   return (
     <section id="top" className="relative overflow-hidden">
@@ -86,19 +83,12 @@ export default function Hero() {
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-10 flex items-center gap-6 text-sm text-ink-soft"
+            className="mt-10 flex items-center gap-3 text-sm text-ink-soft"
           >
-            <div className="flex -space-x-2">
-              {faces.map((src, i) => (
-                <span key={i} className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-paper">
-                  <Image src={src} alt="" fill sizes="36px" className="object-cover" />
-                </span>
-              ))}
-            </div>
-            <div>
-              <span className="text-clay">★★★★★</span>
-              <p className="text-xs">{t("hero.trust")}</p>
-            </div>
+            <span className="grid h-9 w-9 place-items-center rounded-full bg-clay/15 text-clay">
+              ✿
+            </span>
+            <p>{t("hero.trust")}</p>
           </motion.div>
         </div>
 

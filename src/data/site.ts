@@ -60,7 +60,7 @@ export const gallery = [
 export const nav = [
   { key: "nav.shop", label: "Shop", href: "/#shop" },
   { key: "nav.story", label: "Our Story", href: "/#story" },
-  { key: "nav.loved", label: "Loved by", href: "/#reviews" },
+  { key: "nav.loved", label: "Loved by", href: "/#community" },
   { key: "nav.contact", label: "Contact", href: "/contact" },
 ];
 

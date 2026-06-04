@@ -5,7 +5,7 @@ import OfferStrip from "@/components/OfferStrip";
 import Collections from "@/components/Collections";
 import ValuePillars from "@/components/ValuePillars";
 import Story from "@/components/Story";
-import Reviews from "@/components/Reviews";
+import TrustBand from "@/components/TrustBand";
 import InstagramStrip from "@/components/InstagramStrip";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
@@ -26,7 +26,7 @@ export default function Home() {
         <LifestyleBreak />
         <ValuePillars />
         <Story />
-        <Reviews />
+        <TrustBand />
         <RecentlyViewed />
         <InstagramStrip />
         <Newsletter />

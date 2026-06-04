@@ -11,7 +11,7 @@ export default function InstagramStrip() {
   // Real lifestyle photography (stable Shopify CDN; IG feed links expire).
   const grid = gallery;
   return (
-    <section className="px-6 py-16 lg:px-10 lg:py-20">
+    <section id="community" className="px-6 py-16 lg:px-10 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <Reveal className="flex flex-wrap items-end justify-between gap-4">
           <div>

@@ -38,7 +38,6 @@ export const dict: Record<Locale, Dict> = {
       "Handmade details, natural fabrics, real bows. Soft, sustainable clothing for little ones and their mamas.",
     "hero.cta1": "Shop the collection",
     "hero.cta2": "Our story",
-    "hero.trust": "Loved by 5,000+ families",
 
     "offer.deal": "Deal of the week",
     "offer.ship": "Free shipping over €50 · ships in 1–2 days",
@@ -87,6 +86,13 @@ export const dict: Record<Locale, Dict> = {
     "ig.headingTemplate": "Follow along {0}",
     "ig.cta": "See more on Instagram →",
 
+    "trust.heading": "The Madessa promise",
+    "trust.1": "Handmade in the Netherlands",
+    "trust.2": "100% natural fabrics",
+    "trust.3": "Free shipping over €50",
+    "trust.4": "30-day free returns",
+    "trust.5": "Secure checkout",
+    "hero.trust": "Handmade in the Netherlands, with love",
     "reviews.eyebrow": "Real people, real feedback",
     "reviews.heading": "Loved by families everywhere",
 
@@ -133,7 +139,6 @@ export const dict: Record<Locale, Dict> = {
       "Handgemaakte details, natuurlijke stoffen, echte strikken. Zachte, duurzame kleding voor de kleintjes en hun mama's.",
     "hero.cta1": "Bekijk de collectie",
     "hero.cta2": "Ons verhaal",
-    "hero.trust": "Geliefd door 5.000+ gezinnen",
 
     "offer.deal": "Deal van de week",
     "offer.ship": "Gratis verzending boven €50 · verzonden in 1–2 dagen",
@@ -182,6 +187,13 @@ export const dict: Record<Locale, Dict> = {
     "ig.headingTemplate": "Volg ons {0}",
     "ig.cta": "Meer op Instagram →",
 
+    "trust.heading": "De belofte van Madessa",
+    "trust.1": "Handgemaakt in Nederland",
+    "trust.2": "100% natuurlijke stoffen",
+    "trust.3": "Gratis verzending boven €50",
+    "trust.4": "30 dagen gratis retour",
+    "trust.5": "Veilig afrekenen",
+    "hero.trust": "Met liefde handgemaakt in Nederland",
     "reviews.eyebrow": "Echte mensen, echte reacties",
     "reviews.heading": "Geliefd bij gezinnen overal",
 
@@ -228,7 +240,6 @@ export const dict: Record<Locale, Dict> = {
       "El yapımı detaylar, doğal kumaşlar, gerçek fiyonklar. Küçükler ve anneleri için yumuşak, sürdürülebilir giysiler.",
     "hero.cta1": "Koleksiyonu keşfet",
     "hero.cta2": "Hikayemiz",
-    "hero.trust": "5.000+ aile tarafından seviliyor",
 
     "offer.deal": "Haftanın fırsatı",
     "offer.ship": "€50 üzeri ücretsiz kargo · 1–2 günde kargoda",
@@ -277,6 +288,13 @@ export const dict: Record<Locale, Dict> = {
     "ig.headingTemplate": "Bizi takip et {0}",
     "ig.cta": "Instagram'da daha fazlası →",
 
+    "trust.heading": "Madessa'nın sözü",
+    "trust.1": "Hollanda'da el yapımı",
+    "trust.2": "%100 doğal kumaşlar",
+    "trust.3": "€50 üzeri ücretsiz kargo",
+    "trust.4": "30 gün ücretsiz iade",
+    "trust.5": "Güvenli ödeme",
+    "hero.trust": "Hollanda'da sevgiyle el yapımı",
     "reviews.eyebrow": "Gerçek insanlar, gerçek yorumlar",
     "reviews.heading": "Her yerde aileler tarafından seviliyor",
 

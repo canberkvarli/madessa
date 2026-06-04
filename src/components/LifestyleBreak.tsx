@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { site } from "@/data/site";
 import { useT } from "./i18n/LocaleContext";
+import { BLUR } from "@/lib/blur";
 
 export default function LifestyleBreak() {
   const { t } = useT();
@@ -27,6 +28,8 @@ export default function LifestyleBreak() {
             src={site.lifestyleImage}
             alt="A little one in a handmade Madessa dress"
             fill
+            placeholder="blur"
+            blurDataURL={BLUR}
             sizes="100vw"
             className="scale-110 object-cover object-[50%_30%]"
           />

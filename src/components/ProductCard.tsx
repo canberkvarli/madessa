@@ -5,6 +5,7 @@ import { type Product } from "@/data/products";
 import AddToCartButton from "./cart/AddToCartButton";
 import HeartButton from "./wishlist/HeartButton";
 import { useT } from "./i18n/LocaleContext";
+import { BLUR } from "@/lib/blur";
 
 function openQuickView(slug: string) {
   window.dispatchEvent(new CustomEvent("madessa:quickview", { detail: slug }));
@@ -30,6 +31,8 @@ export default function ProductCard({ product }: { product: Product }) {
             src={product.image}
             alt={product.title}
             fill
+            placeholder="blur"
+            blurDataURL={BLUR}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
             className="object-cover transition-opacity duration-500 ease-out group-hover:opacity-0"
           />

@@ -2,6 +2,7 @@
 
 import { CartProvider } from "./CartContext";
 import CartDrawer from "./CartDrawer";
+import FlyToBag from "./FlyToBag";
 import { CatalogProvider } from "@/components/catalog/CatalogContext";
 import { WishlistProvider } from "@/components/wishlist/WishlistContext";
 import WishlistDrawer from "@/components/wishlist/WishlistDrawer";
@@ -42,6 +43,7 @@ export default function Providers({
             <SizeGuide />
             <QuickView />
             <NewsletterPopup />
+            <FlyToBag />
           </WishlistProvider>
         </CartProvider>
       </CatalogProvider>

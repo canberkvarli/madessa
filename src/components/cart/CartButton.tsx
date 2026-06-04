@@ -1,13 +1,28 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
+import { useEffect, useRef } from "react";
+import { motion, AnimatePresence, useAnimationControls } from "motion/react";
 import { useCart } from "./CartContext";
 
 export default function CartButton() {
   const { count, open } = useCart();
+  const controls = useAnimationControls();
+  const prev = useRef(count);
+
+  useEffect(() => {
+    if (count > prev.current) {
+      controls.start({
+        scale: [1, 1.25, 0.92, 1],
+        transition: { duration: 0.45, ease: "easeOut" },
+      });
+    }
+    prev.current = count;
+  }, [count, controls]);
 
   return (
-    <button
+    <motion.button
+      id="cart-button"
+      animate={controls}
       onClick={open}
       aria-label={`Open bag, ${count} items`}
       className="relative grid h-10 w-10 place-items-center rounded-full border border-ink/15 bg-paper/50 backdrop-blur transition-colors hover:border-ink/40"
@@ -30,6 +45,6 @@ export default function CartButton() {
           </motion.span>
         )}
       </AnimatePresence>
-    </button>
+    </motion.button>
   );
 }

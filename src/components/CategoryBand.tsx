@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
 import { useT } from "./i18n/LocaleContext";
+import { BLUR } from "@/lib/blur";
 
 const G = "https://cdn.shopify.com/s/files/1/0918/7780/2358/files/";
 
@@ -49,6 +50,8 @@ export default function CategoryBand() {
                   src={c.img}
                   alt={t(`cat.${c.key}`)}
                   fill
+                  placeholder="blur"
+                  blurDataURL={BLUR}
                   sizes="(max-width: 768px) 50vw, 18vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />

@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { site } from "@/data/site";
 import { useCatalog } from "@/components/catalog/CatalogContext";
 import { useT } from "@/components/i18n/LocaleContext";
+import { BLUR } from "@/lib/blur";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -105,8 +106,10 @@ export default function Hero() {
               alt="A little one in a handmade Madessa dress"
               fill
               priority
+              placeholder="blur"
+              blurDataURL={BLUR}
               sizes="(max-width: 1024px) 92vw, 600px"
-              className="object-cover object-[50%_26%]"
+              className="animate-kenburns object-cover object-[50%_26%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/15 via-transparent to-transparent" />
           </div>

@@ -32,14 +32,17 @@ export function normalizeFeed(json: unknown): IgPost[] {
     : ((json as Loose)?.posts as Loose[]) ||
       ((json as Loose)?.data as Loose[]) ||
       [];
-  return arr
-    .map((p) => {
-      const image = pickImage(p);
-      const permalink = (p.permalink as string) || (p.link as string) || "";
-      if (!image) return null;
-      return { image, permalink, caption: (p.caption as string) || "" };
-    })
-    .filter((p): p is IgPost => p !== null);
+  const out: IgPost[] = [];
+  for (const p of arr) {
+    const image = pickImage(p);
+    if (!image) continue;
+    out.push({
+      image,
+      permalink: (p.permalink as string) || (p.link as string) || "",
+      caption: (p.caption as string) || "",
+    });
+  }
+  return out;
 }
 
 export async function fetchInstagram(url: string): Promise<IgPost[] | null> {

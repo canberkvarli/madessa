@@ -4,7 +4,12 @@
 export const site = {
   name: "Madessa",
   tagline: "Handmade details. Natural fabrics. Made by a family, for yours.",
-  shopUrl: "https://madessa.co",
+  // Where Shopify checkout lives. Once the new frontend takes over madessa.co,
+  // this must point at Shopify's own domain (e.g. https://madessa.myshopify.com)
+  // so the cart hands off to Shopify checkout instead of looping back here.
+  // Set NEXT_PUBLIC_SHOPIFY_CHECKOUT_URL in Vercel; falls back to the value below.
+  shopUrl:
+    process.env.NEXT_PUBLIC_SHOPIFY_CHECKOUT_URL ?? "https://madessa.co",
 
   // Real contact info from madessa.co. (No public phone yet — add one here when ready.)
   contact: {
